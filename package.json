@@ -1,0 +1,48 @@
+{
+  "name": "vue3-vite-demo",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ./src/**/*.{js,jsx,vue,ts,tsx} --fix"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.0.6",
+    "@vueuse/core": "^8.7.5",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.3",
+    "element-plus": "^2.2.6",
+    "lodash": "^4.17.21",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.14",
+    "pinia-plugin-persist": "^1.0.0",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue-jsx": "^1.3.10",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.1.1",
+    "postcss": "^8.4.14",
+    "postcss-html": "^1.4.1",
+    "sass": "^1.53.0",
+    "stylelint": "^14.9.1",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-recommended-scss": "^6.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "stylelint-order": "^5.0.0",
+    "unplugin-auto-import": "^0.8.8",
+    "unplugin-vue-components": "^0.19.6",
+    "vite": "^2.9.9"
+  }
+}
