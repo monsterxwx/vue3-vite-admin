@@ -2,14 +2,13 @@
   <div class="test2">
     <baseTable
       stripe
-      height="250"
       :data="list"
       v-bind="contentTableConfig"
       @selection-change="selectionChange"
       @current-change="test1"
       @page-change="pageChange"
     >
-      <template #header>
+      <template #search>
         <baseSearchForm
           v-bind="searchConfig"
           @search="search"

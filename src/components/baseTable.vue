@@ -1,15 +1,17 @@
 <template>
   <div class="baseTable">
-    <div class="header">
-      <slot name="header">
-        <div class="title">
-          {{ title }}
-        </div>
-      </slot>
+    <div class="search">
+      <slot name="search" />
+    </div>
+    <div>
+      <div class="header">
+        <slot name="header" />
+      </div>
     </div>
     <el-table
       :header-cell-style="{ background: '#fafafa' }"
       border
+      height="250"
       highlight-current-row
       v-bind="$attrs"
       style="width: 100%;"
@@ -167,7 +169,6 @@ const handleCurrentChange = (value) => {
     text-align: center;
   }
   .header {
-    padding: 0 0 10px;
     .title {
       font-size: 20px;
       font-weight: 700;
