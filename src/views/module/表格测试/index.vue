@@ -1,15 +1,20 @@
 <template>
   <div class="test2">
-    <!-- <el-card> -->
     <baseTable
       stripe
       height="250"
       :data="list"
-      v-bind="tableConfig"
+      v-bind="contentTableConfig"
       @selection-change="selectionChange"
       @current-change="test1"
       @page-change="pageChange"
     >
+      <template #header>
+        <baseSearchForm
+          v-bind="searchConfig"
+          @search="search"
+        />
+      </template>
       <template #status="scope">
         <el-switch v-model="scope.row.enable" />
       </template>
@@ -22,14 +27,14 @@
         </el-button>
       </template>
     </baseTable>
-    <!-- </el-card> -->
   </div>
 </template>
 
 <script setup>
 // 表格测试
 import baseTable from '@/components/baseTable'
-import tableConfig from './tableConfig'
+import baseSearchForm from '@/components/baseSearchForm'
+import { contentTableConfig, searchConfig } from './tableConfig'
 import { reactive } from 'vue'
 
 const list = reactive([
@@ -39,9 +44,11 @@ const list = reactive([
     cellphone: '3',
     enable: true,
     createAt: '2022-03-29',
-    updateAt: '2022-04-30',
+    updateAt: '2022-04-30答复奇偶的叫法欧舒丹即佛爱圣诞节佛山',
     test1: 'test1',
-    test2: 'test2'
+    test2: 'test2',
+    test3: 'test3',
+    more: 'more'
   },
   {
     name: '11',
@@ -49,8 +56,8 @@ const list = reactive([
     cellphone: '33',
     enable: true,
     createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
+    updateAt: '2022-04-30',
+    more: 'more'
   },
   {
     name: '111',
@@ -173,6 +180,9 @@ const test1 = (e) => {
 }
 const pageChange = (e) => {
   console.log('页数', e)
+}
+const search = (e) => {
+  console.log(e)
 }
 
 </script>

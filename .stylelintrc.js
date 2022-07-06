@@ -20,6 +20,7 @@ module.exports = {
       'selector-class-pattern':null,
       'property-no-unknown': null,
       'selector-type-no-unknown':null,
+      'scss/dollar-variable-pattern':null,
       'no-empty-source': null,
       'selector-pseudo-class-no-unknown': [
           true,

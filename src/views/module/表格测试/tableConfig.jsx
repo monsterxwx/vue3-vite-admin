@@ -43,10 +43,20 @@ const contentTableConfig = {
       slotName: 'createAt'
     },
     {
+      prop: 'more',
+      minWidth: '150',
+      renderHeader: (scope) => {
+        return (
+          <ElButton>自定义表头</ElButton>
+        )
+      }
+    },
+    {
       prop: 'updateAt',
       label: '更新时间',
       minWidth: '250',
-      slotName: 'updateAt'
+      slotName: 'updateAt',
+      showTip: true
     },
     {
       mulHeaderRender: (scope) => {
@@ -68,4 +78,30 @@ const contentTableConfig = {
   showIndexColumn: true,
   showSelectColumn: true
 }
-export default contentTableConfig
+
+const searchConfig = {
+  searchPropList: [
+    {
+      type: 'text',
+      prop: 'test1'
+    },
+    {
+      type: 'select',
+      prop: 'test2',
+      enum: [
+        {
+          value: '1',
+          label: '1'
+        },
+        {
+          value: '2',
+          label: '2'
+        }
+      ]
+    }
+  ]
+}
+export {
+  contentTableConfig,
+  searchConfig
+}

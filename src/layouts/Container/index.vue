@@ -40,18 +40,18 @@ defineProps({
 <style lang="scss" scoped>
 .baseContainer {
   display: flex;
+  overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   .header {
     height: 60px;
     background-color: #f7f7f7;
   }
   .content {
-    flex: 1;
     display: flex;
     flex-direction: row;
-    height: calc(100% - 60px);
+    height: calc(100vh - 60px);
     .aside {
       overflow: hidden;
       background-color: #001529;
@@ -60,15 +60,16 @@ defineProps({
     .main {
       display: flex;
       width: calc(100% - 200px);
+      height: 100%;
       background-color: #eeeeee;
-      flex: 1;
+      flex: 1 0;
       flex-direction: column;
       .mainContent {
         overflow: hidden;
         padding: 10px;
         min-height: 0;
         background-color: #ffffff;
-        flex: 1;
+        flex: 1 0;
       }
     }
   }

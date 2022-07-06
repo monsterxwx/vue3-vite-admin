@@ -1,4 +1,11 @@
-@import "./common.scss";        // 全局公共样式
-@import "./mixin.scss";         // 全局mixin
-@import "./transition.scss";    // 全局过渡动画样式
-@import "./variables.scss";     // 全局sass变量
+// 全局公共样式
+@import "./common";
+
+// 全局mixin
+@import "./mixin";
+
+// 全局过渡动画样式
+@import "./transition";
+
+// 全局sass变量
+@import "./variables";

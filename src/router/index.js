@@ -8,7 +8,7 @@ const routes = [
   },
   {
     path: '/main',
-    component: () => import('@/views/main'),
+    component: () => import('@/layouts'),
     children: [
       {
         path: '/test1',
@@ -16,7 +16,7 @@ const routes = [
       },
       {
         path: '/test2',
-        component: () => import('@/views/module/test2')
+        component: () => import('@/views/module/表格测试')
       }
     ]
   },
@@ -25,7 +25,8 @@ const routes = [
     component: () => import('@/views/login')
   },
   {
-    path: '/404',
+    // 找不到路由重定向到404页面
+    path: '/:pathMatch(.*)',
     component: () => import('@/error/404')
   }
 ]
