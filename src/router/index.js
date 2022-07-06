@@ -27,7 +27,7 @@ const routes = [
   {
     // 找不到路由重定向到404页面
     path: '/:pathMatch(.*)',
-    component: () => import('@/error/404')
+    component: () => import('@/components/errorMessage/404')
   }
 ]
 

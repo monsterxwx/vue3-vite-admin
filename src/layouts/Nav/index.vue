@@ -59,7 +59,7 @@
 <script setup>
 import useNavStore from '@/store/nav'
 import { ref } from 'vue'
-import rightMouseMenu from '@/components/rightMouseMenu'
+import rightMouseMenu from '@/components/RightMouseMenu'
 
 const goRouterPath = (item) => {
   navStore.goNavItem(item)

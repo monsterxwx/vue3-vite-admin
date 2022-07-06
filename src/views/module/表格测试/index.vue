@@ -31,8 +31,8 @@
 
 <script setup>
 // 表格测试
-import baseTable from '@/components/baseTable'
-import baseSearchForm from '@/components/baseSearchForm'
+import baseTable from '@/components/BaseTable'
+import baseSearchForm from '@/components/SearchForm'
 import { contentTableConfig, searchConfig } from './tableConfig'
 import { reactive } from 'vue'
 
