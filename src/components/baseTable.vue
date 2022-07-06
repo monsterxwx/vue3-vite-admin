@@ -8,33 +8,6 @@
         <div class="handler">
           <slot name="headerHandler" />
         </div>
-        <!-- <div>
-          <el-button
-            type="primary"
-            size="default"
-            :icon="CirclePlus"
-          >
-            新增
-          </el-button>
-          <el-button
-            type="primary"
-            :icon="Edit"
-          >
-            编辑
-          </el-button>
-          <el-button
-            type="primary"
-            :icon="Delete"
-          >
-            删除
-          </el-button>
-          <el-button
-            type="primary"
-            :icon="RefreshRight"
-          >
-            刷新
-          </el-button>
-        </div> -->
       </slot>
     </div>
     <el-table
@@ -61,10 +34,27 @@
         v-for="propItem in propList"
         :key="propItem.prop"
       >
+        <!-- 多级表头 render渲染 -->
+        <template v-if="propItem.mulHeaderRender">
+          <component
+            :is="propItem.mulHeaderRender"
+          />
+        </template>
+
         <el-table-column
+          v-else
           v-bind="propItem"
-          align="center"
         >
+          <!-- 自定义 header -->
+          <template
+            #header
+            v-if="propItem.renderHeader"
+          >
+            <component
+              :is="propItem.renderHeader"
+              :row="propItem"
+            />
+          </template>
           <template #default="scope">
             <component
               v-if="propItem.render"
@@ -160,6 +150,10 @@ const handleCurrentChange = (value) => {
     overflow: auto;
     min-height: 0;
     flex: 1 0;
+  }
+  :deep(.el-table__header th),
+  :deep(.el-table__body td) {
+    text-align: center;
   }
   .header {
     display: flex;

@@ -1,4 +1,4 @@
-import { ElButton } from 'element-plus'
+import { ElButton, ElTableColumn } from 'element-plus'
 const contentTableConfig = {
   title: '用户列表',
   propList: [
@@ -47,6 +47,17 @@ const contentTableConfig = {
       label: '更新时间',
       minWidth: '250',
       slotName: 'updateAt'
+    },
+    {
+      mulHeaderRender: (scope) => {
+        return (
+        <ElTableColumn label="多级表头">
+            <ElTableColumn prop="test1" label="State" width="120" />
+            <ElTableColumn prop="test2" label="City" width="120" />
+            <ElTableColumn prop="test3" label="City2" width="120" />
+        </ElTableColumn>
+        )
+      }
     },
     {
       label: '操作',

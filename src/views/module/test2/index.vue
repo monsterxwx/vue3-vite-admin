@@ -39,8 +39,9 @@ const list = reactive([
     cellphone: '3',
     enable: true,
     createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
+    updateAt: '2022-04-30',
+    test1: 'test1',
+    test2: 'test2'
   },
   {
     name: '11',

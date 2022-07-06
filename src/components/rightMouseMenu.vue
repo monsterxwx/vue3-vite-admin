@@ -77,6 +77,7 @@ const itemSelectClick = (item) => {
 <style lang="scss" scoped>
   .rightMenu {
     position: fixed;
+    z-index: 999;
     padding: 5px 0;
     border: 1px solid #f3f3f3;
     border-radius: 4px;
