@@ -9,12 +9,12 @@
       </div>
     </div>
     <el-table
+      ref="baseTableRef"
       :header-cell-style="{ background: '#fafafa' }"
       border
       height="250"
       highlight-current-row
       v-bind="$attrs"
-      style="width: 100%;"
     >
       <el-table-column
         v-if="showSelectColumn"
@@ -114,6 +114,7 @@
 </template>
 
 <script setup>
+
 // import { Delete, Edit, CirclePlus, RefreshRight } from '@element-plus/icons-vue'
 defineProps({
   title: {
@@ -151,6 +152,7 @@ const handleSizeChange = (value) => {
 const handleCurrentChange = (value) => {
   emit('pageChange', value)
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -159,10 +161,9 @@ const handleCurrentChange = (value) => {
   width: 100%;
   height: 100%;
   flex-direction: column;
-  :deep(.el-table) {
-    overflow: auto;
-    min-height: 0;
-    flex: 1 0;
+  .el-table {
+    width: 100%;
+    flex: 1;
   }
   :deep(.el-table__header th),
   :deep(.el-table__body td) {

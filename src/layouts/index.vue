@@ -1,16 +1,16 @@
 <template>
-  <Container :aside-width="collapse ? '64px' : '200px'">
+  <Container :aside-width="navStore.collapse ? '64px' : '200px'">
     <template #header>
       <el-button
         round
         size="large"
-        @click="changeColl"
+        @click="navStore.changeCollapse"
       >
         改变宽度
       </el-button>
     </template>
     <template #aside>
-      <Menu :collapse="collapse" />
+      <Menu :collapse="navStore.collapse" />
     </template>
     <template #nav>
       <Nav />
@@ -29,16 +29,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import Container from './Container'
 import Nav from './Nav'
 import Menu from './Menu'
-
-const collapse = ref(false)
-
-const changeColl = () => {
-  collapse.value = !collapse.value
-}
+import useNavStore from '@/store/nav'
+const navStore = useNavStore()
 
 </script>
 

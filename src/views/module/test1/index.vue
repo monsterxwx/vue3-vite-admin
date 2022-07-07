@@ -88,7 +88,6 @@ testApi()
 
 <style lang="scss" scoped>
 .test1 {
-  overflow: auto;
   height: 100%;
 }
 </style>

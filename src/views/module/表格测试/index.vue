@@ -188,6 +188,8 @@ const search = (e) => {
 
 <style lang="scss" scoped>
 .test2 {
+  // padding: 10px;
+  width: 100%;
   height: 100%;
 }
 </style>

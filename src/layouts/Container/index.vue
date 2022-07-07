@@ -1,17 +1,17 @@
 <template>
   <div class="baseContainer">
-    <div class="header">
-      <slot name="header">
-        Header
+    <div
+      class="aside"
+      :style="{ width: asideWidth }"
+    >
+      <slot name="aside">
+        Aside
       </slot>
     </div>
     <div class="content">
-      <div
-        class="aside"
-        :style="{ width: asideWidth }"
-      >
-        <slot name="aside">
-          Aside
+      <div class="header">
+        <slot name="header">
+          Header
         </slot>
       </div>
       <div class="main">
@@ -43,33 +43,30 @@ defineProps({
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  flex-direction: column;
-  .header {
-    height: 60px;
-    background-color: #f7f7f7;
+  .aside {
+    overflow: hidden;
+    height: 100%;
+    background-color: #001529;
+    transition: width 0.3s;
   }
   .content {
     display: flex;
-    flex-direction: row;
-    height: calc(100vh - 60px);
-    .aside {
-      overflow: hidden;
-      background-color: #001529;
-      transition: width 0.2s;
+    flex: 1 0;
+    flex-direction: column;
+    min-width: 0;
+    .header {
+      height: 60px;
+      background-color: #f7f7f7;
     }
     .main {
       display: flex;
-      width: calc(100% - 200px);
-      height: 100%;
-      background-color: #eeeeee;
+      overflow: hidden;
       flex: 1 0;
       flex-direction: column;
       .mainContent {
-        overflow: hidden;
-        padding: 10px;
-        min-height: 0;
-        background-color: #ffffff;
+        overflow-y: auto;
         flex: 1 0;
+        padding: 10px;
       }
     }
   }
