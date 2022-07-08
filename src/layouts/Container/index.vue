@@ -2,14 +2,17 @@
   <div class="baseContainer">
     <div
       class="aside"
-      :style="{ width: asideWidth }"
+      :style="{ width: asideWidth,backgroundColor:asideBgColor }"
     >
       <slot name="aside">
         Aside
       </slot>
     </div>
     <div class="content">
-      <div class="header">
+      <div
+        class="header"
+        :style="{ height: headerHeight,backgroundColor:headerBgColor }"
+      >
         <slot name="header">
           Header
         </slot>
@@ -33,6 +36,18 @@ defineProps({
   asideWidth: {
     type: String,
     default: '200px'
+  },
+  asideBgColor: {
+    type: String,
+    default: '#001529'
+  },
+  headerHeight: {
+    type: String,
+    default: '55px'
+  },
+  headerBgColor: {
+    type: String,
+    default: '#f7f7f7'
   }
 })
 </script>
@@ -46,7 +61,6 @@ defineProps({
   .aside {
     overflow: hidden;
     height: 100%;
-    background-color: #001529;
     transition: width 0.3s;
   }
   .content {
@@ -54,10 +68,6 @@ defineProps({
     flex: 1 0;
     flex-direction: column;
     min-width: 0;
-    .header {
-      height: 60px;
-      background-color: #f7f7f7;
-    }
     .main {
       display: flex;
       overflow: hidden;

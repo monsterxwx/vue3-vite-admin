@@ -1,13 +1,7 @@
 <template>
   <Container :aside-width="navStore.collapse ? '64px' : '200px'">
     <template #header>
-      <el-button
-        round
-        size="large"
-        @click="navStore.changeCollapse"
-      >
-        改变宽度
-      </el-button>
+      <Header />
     </template>
     <template #aside>
       <Menu :collapse="navStore.collapse" />
@@ -32,6 +26,7 @@
 import Container from './Container'
 import Nav from './Nav'
 import Menu from './Menu'
+import Header from './Header'
 import useNavStore from '@/store/nav'
 const navStore = useNavStore()
 

@@ -19,17 +19,22 @@
 }
 
 /* 常用 flex */
-.flx-center {
+.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.flx-justify-between {
+.flex-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.flx-align-center {
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-align-center {
   display: flex;
   align-items: center;
 }

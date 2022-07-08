@@ -13,19 +13,19 @@
         <el-icon>
           <location />
         </el-icon>
-        <span>Navigator One</span>
+        <span>test</span>
       </template>
       <el-menu-item
         @click="addItem"
         index="/test1"
       >
-        item one
+        test1
       </el-menu-item>
       <el-menu-item
         @click="addItem2"
         index="/test2"
       >
-        item two
+        test2
       </el-menu-item>
     </el-sub-menu>
     <el-sub-menu index="2">
