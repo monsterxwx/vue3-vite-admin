@@ -33,6 +33,12 @@
       >
         echart
       </el-menu-item>
+      <el-menu-item
+        @click="addItem('/overflow','overflow')"
+        index="/overflow"
+      >
+        overflow
+      </el-menu-item>
     </el-sub-menu>
     <el-sub-menu index="2">
       <template #title>

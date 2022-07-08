@@ -21,6 +21,10 @@ const routes = [
       {
         path: '/test3',
         component: () => import('@/views/module/echarts测试')
+      },
+      {
+        path: '/overflow',
+        component: () => import('@/views/module/overflow')
       }
     ]
   },

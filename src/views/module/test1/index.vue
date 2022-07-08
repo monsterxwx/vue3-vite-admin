@@ -3,17 +3,6 @@
     <el-card>
       <div>{{ nowTime }}</div>
       <div>{{ userStore.name }}</div>
-      <el-popover
-        placement="top-start"
-        title="Title"
-        :width="200"
-        trigger="hover"
-        content="this is content, this is content, this is content"
-      >
-        <template #reference>
-          <el-button>Hover to activate</el-button>
-        </template>
-      </el-popover>
       <el-button
         round
         size="large"
