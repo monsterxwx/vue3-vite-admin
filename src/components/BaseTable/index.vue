@@ -12,7 +12,7 @@
       ref="baseTableRef"
       :header-cell-style="{ background: '#fafafa' }"
       border
-      height="250"
+      height="100%"
       highlight-current-row
       v-bind="$attrs"
     >
@@ -158,12 +158,12 @@ const handleCurrentChange = (value) => {
 <style lang="scss" scoped>
 .baseTable {
   display: flex;
+  overflow: auto;
   width: 100%;
   height: 100%;
   flex-direction: column;
   .el-table {
     width: 100%;
-    flex: 1;
   }
   :deep(.el-table__header th),
   :deep(.el-table__body td) {

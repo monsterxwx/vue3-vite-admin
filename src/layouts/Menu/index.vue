@@ -16,16 +16,22 @@
         <span>test</span>
       </template>
       <el-menu-item
-        @click="addItem"
+        @click="addItem('/test1','默认')"
         index="/test1"
       >
-        test1
+        默认
       </el-menu-item>
       <el-menu-item
-        @click="addItem2"
+        @click="addItem('/test2','表格')"
         index="/test2"
       >
-        test2
+        表格
+      </el-menu-item>
+      <el-menu-item
+        @click="addItem('/test3','echart')"
+        index="/test3"
+      >
+        echart
       </el-menu-item>
     </el-sub-menu>
     <el-sub-menu index="2">
@@ -54,20 +60,14 @@ defineProps({
   }
 })
 const navStore = useNavStore()
-const addItem = () => {
+const addItem = (value, name) => {
   const Item = {
-    path: '/test1',
-    name: 'test1'
+    path: value,
+    name
   }
   navStore.addNavItem(Item)
 }
-const addItem2 = () => {
-  const Item = {
-    path: '/test2',
-    name: 'test2'
-  }
-  navStore.addNavItem(Item)
-}
+
 </script>
 
 <style lang="scss" scoped>

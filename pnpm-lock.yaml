@@ -7,6 +7,7 @@ specifiers:
   '@vueuse/core': ^8.7.5
   axios: ^0.27.2
   dayjs: ^1.11.3
+  echarts: ^5.3.3
   element-plus: ^2.2.6
   eslint: ^8.0.1
   eslint-config-standard: ^17.0.0
@@ -34,6 +35,7 @@ specifiers:
   unplugin-vue-components: ^0.19.6
   vite: ^2.9.9
   vue: ^3.2.25
+  vue-echarts: 6.0.3
   vue-router: ^4.0.13
 
 dependencies:
@@ -41,6 +43,7 @@ dependencies:
   '@vueuse/core': 8.7.5_vue@3.2.37
   axios: 0.27.2
   dayjs: 1.11.3
+  echarts: 5.3.3
   element-plus: 2.2.6_vue@3.2.37
   lodash: 4.17.21
   normalize.css: 8.0.1
@@ -48,6 +51,7 @@ dependencies:
   pinia: 2.0.14_vue@3.2.37
   pinia-plugin-persist: 1.0.0_pinia@2.0.14+vue@3.2.37
   vue: 3.2.37
+  vue-echarts: 6.0.3_echarts@5.3.3+vue@3.2.37
   vue-router: 4.0.13_vue@3.2.37
 
 devDependencies:
@@ -1326,6 +1330,13 @@ packages:
   /duplexer/0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
     dev: true
+
+  /echarts/5.3.3:
+    resolution: {integrity: sha512-BRw2serInRwO5SIwRviZ6Xgm5Lb7irgz+sLiFMmy/HOaf4SQ+7oYqxKzRHAKp4xHQ05AuHw1xvoQWJjDQq/FGw==}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.3.2
+    dev: false
 
   /electron-to-chromium/1.4.164:
     resolution: {integrity: sha512-K7iy5y6XyP9Pzh3uaDti0KC4JUNT6T1tLG5RTOmesqq2YgAJpYYYJ32m+anvZYjCV35llPTEh87kvEV/uSsiyQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/electron-to-chromium/-/electron-to-chromium-1.4.164.tgz}
@@ -3136,6 +3147,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /resize-detector/0.3.0:
+    resolution: {integrity: sha512-R/tCuvuOHQ8o2boRP6vgx8hXCCy87H1eY9V5imBYeVNyNVpuL9ciReSccLj2gDcax9+2weXy3bc8Vv+NRXeEvQ==}
+    dev: false
+
   /resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/resolve-from/-/resolve-from-4.0.0.tgz}
     engines: {node: '>=4'}
@@ -3593,6 +3608,10 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
+  /tslib/2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+    dev: false
+
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/type-check/-/type-check-0.4.0.tgz}
     engines: {node: '>= 0.8.0'}
@@ -3844,7 +3863,7 @@ packages:
     dev: true
 
   /vue-demi/0.12.5_vue@3.2.37:
-    resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/vue-demi/-/vue-demi-0.12.5.tgz}
+    resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
@@ -3871,6 +3890,23 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.37
+
+  /vue-echarts/6.0.3_echarts@5.3.3+vue@3.2.37:
+    resolution: {integrity: sha512-Nu+qb+szmBFCiVmNSZclquRx2lONGxfJXeppXODBYCl+KAdsP2TIaDwO2wfEFqU5jyxaL4b/qV7IYxswESTSFw==}
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.5
+      echarts: ^5.1.2
+      vue: ^2.6.12 || ^3.1.1
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      echarts: 5.3.3
+      resize-detector: 0.3.0
+      vue: 3.2.37
+      vue-demi: 0.12.5_vue@3.2.37
+    dev: false
 
   /vue-eslint-parser/9.0.2_eslint@8.18.0:
     resolution: {integrity: sha512-uCPQwTGjOtAYrwnU+76pYxalhjsh7iFBsHwBqDHiOPTxtICDaraO4Szw54WFTNZTAEsgHHzqFOu1mmnBOBRzDA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/vue-eslint-parser/-/vue-eslint-parser-9.0.2.tgz}
@@ -3982,3 +4018,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zrender/5.3.2:
+    resolution: {integrity: sha512-8IiYdfwHj2rx0UeIGZGGU4WEVSDEdeVCaIg/fomejg1Xu6OifAL1GVzIPHg2D+MyUkbNgPWji90t0a8IDk+39w==}
+    dependencies:
+      tslib: 2.3.0
+    dev: false
