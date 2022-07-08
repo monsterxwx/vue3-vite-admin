@@ -8,6 +8,7 @@ const useNavStore = defineStore({
     return {
       collapse: false, // 是否收缩菜单
       currentRouterPath: '/main',
+      mouseSelectPath: '', // 鼠标移动到标签对应的path，用于是否显示关闭按钮
       navList: [{ name: '首页', path: '/main' }] //, { name: '首页阿斯顿福建欧威1', path: '/main1' }, { name: '首页阿斯顿福建欧威2', path: '/main2' }, { name: '首页阿斯顿福建欧威3', path: '/main3' }, { name: '首页阿斯顿福建欧威4', path: '/main4' }, { name: '首页阿斯顿福建欧威5', path: '/main5' }, { name: '首页阿斯顿福建欧威6', path: '/main6' }, { name: '首页阿斯顿福建欧威7', path: '/main7' }, { name: '首页阿斯顿福建欧威8', path: '/main8' }, { name: '首页阿斯顿福建欧威9', path: '/main9' }
     }
   },
