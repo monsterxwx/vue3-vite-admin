@@ -19,7 +19,7 @@
       </div>
       <div class="main">
         <div class="headerNav">
-          <slot name="nav" />
+          <slot name="tab" />
         </div>
         <div class="mainContent">
           <slot name="main">

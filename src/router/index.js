@@ -4,7 +4,7 @@ import NProgress from '@/utils/nprogress'
 const routes = [
   {
     path: '/',
-    redirect: '/main'
+    redirect: '/test1'
   },
   {
     path: '/main',

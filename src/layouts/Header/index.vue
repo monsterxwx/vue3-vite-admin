@@ -24,7 +24,7 @@
             首页
           </el-breadcrumb-item>
           <el-breadcrumb-item> <a href="/test1">test</a></el-breadcrumb-item>
-          <el-breadcrumb-item>{{ $route.path.slice(1) }}</el-breadcrumb-item>
+          <el-breadcrumb-item>{{ navStore.currentRouterPath.name }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
     </div>

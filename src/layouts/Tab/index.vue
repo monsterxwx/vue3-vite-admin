@@ -1,5 +1,5 @@
 <template>
-  <div class="headerNav">
+  <div class="header-tab">
     <!-- 左箭头 -->
     <div
       class="arrow"
@@ -21,7 +21,7 @@
       >
         <div
           class="navItem"
-          :class="item.path === navStore.currentRouterPath ? 'activeItem' : ''"
+          :class="item.path === navStore.currentRouterPath.path ? 'activeItem' : ''"
           v-for="(item, index) in navStore.navList"
           :key="item.name"
           @click="goRouterPath(item)"
@@ -31,7 +31,7 @@
         >
           {{ item.name }}
           <el-icon
-            v-if="navStore.currentRouterPath===item.path || navStore.mouseSelectPath===item.path"
+            v-if="navStore.currentRouterPath.path===item.path || navStore.mouseSelectPath===item.path"
             style="margin-left: 5px;"
             @click.stop="deleteItem(index)"
           >
@@ -111,7 +111,7 @@ const mouseRightClick = (event, index) => {
 </script>
 
 <style lang="scss" scoped>
-.headerNav {
+.header-tab {
   display: flex;
   justify-content: space-between;
   align-items: center;

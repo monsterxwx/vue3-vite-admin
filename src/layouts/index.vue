@@ -6,8 +6,8 @@
     <template #aside>
       <Menu :collapse="navStore.collapse" />
     </template>
-    <template #nav>
-      <Nav />
+    <template #tab>
+      <Tab />
     </template>
     <template #main>
       <router-view v-slot="{Component}">
@@ -24,7 +24,7 @@
 
 <script setup>
 import Container from './Container'
-import Nav from './Nav'
+import Tab from './Tab'
 import Menu from './Menu'
 import Header from './Header'
 import useNavStore from '@/store/nav'
