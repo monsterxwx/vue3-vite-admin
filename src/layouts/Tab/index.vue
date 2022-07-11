@@ -112,6 +112,7 @@ const mouseRightClick = (event, index) => {
 
 <style lang="scss" scoped>
 .header-tab {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -134,7 +135,7 @@ const mouseRightClick = (event, index) => {
   .navContent {
     display: flex;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0 5px;
     height: 100%;
     flex: 1;

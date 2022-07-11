@@ -8,12 +8,12 @@
       @current-change="test1"
       @page-change="pageChange"
     >
-      <template #search>
+      <!-- <template #search>
         <baseSearchForm
           v-bind="searchConfig"
           @search="search"
         />
-      </template>
+      </template> -->
       <template #status="scope">
         <el-switch v-model="scope.row.enable" />
       </template>

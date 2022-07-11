@@ -158,7 +158,6 @@ const handleCurrentChange = (value) => {
 <style lang="scss" scoped>
 .baseTable {
   display: flex;
-  overflow: auto;
   width: 100%;
   height: 100%;
   flex-direction: column;

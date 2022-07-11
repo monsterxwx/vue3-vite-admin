@@ -173,10 +173,7 @@ const getSearchList = computed(() => {
   margin-bottom: 10px;
   width: 100%;
   .left {
-    display: grid;
-    max-width: 1024px;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    grid-gap: 10px 20px;
+    display: flex;
     .itemSearch {
       display: flex;
       align-items: center;
@@ -186,11 +183,12 @@ const getSearchList = computed(() => {
         white-space: nowrap;
         color: #606244;
       }
-      .el-input,
-      .el-select,
-      .el-date-editor--timerange {
-        width: 210px;
-      }
+
+      // .el-input,
+      // .el-select,
+      // .el-date-editor--timerange {
+      //   width: 210px;
+      // }
 
       // 去除时间选择器上下 padding
       .el-range-editor.el-input__wrapper {

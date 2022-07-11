@@ -1,31 +1,24 @@
 <template>
-  <div class="baseContainer">
+  <div class="Container">
     <div
       class="aside"
-      :style="{ width: asideWidth,backgroundColor:asideBgColor }"
+      :style="{ width: asideWidth }"
     >
       <slot name="aside">
         Aside
       </slot>
     </div>
     <div class="content">
-      <div
-        class="header"
-        :style="{ height: headerHeight,backgroundColor:headerBgColor }"
-      >
+      <div class="common">
         <slot name="header">
           Header
         </slot>
+        <slot name="tab" />
       </div>
-      <div class="main">
-        <div class="headerNav">
-          <slot name="tab" />
-        </div>
-        <div class="mainContent">
-          <slot name="main">
-            Main
-          </slot>
-        </div>
+      <div class="scroll">
+        <slot name="main">
+          Main
+        </slot>
       </div>
     </div>
   </div>
@@ -36,48 +29,36 @@ defineProps({
   asideWidth: {
     type: String,
     default: '200px'
-  },
-  asideBgColor: {
-    type: String,
-    default: '#001529'
-  },
-  headerHeight: {
-    type: String,
-    default: '55px'
-  },
-  headerBgColor: {
-    type: String,
-    default: '#f7f7f7'
   }
 })
 </script>
 
 <style lang="scss" scoped>
-.baseContainer {
+.Container {
   display: flex;
   overflow: hidden;
   width: 100%;
   height: 100vh;
   .aside {
-    overflow: hidden;
+    width: 200px;
     height: 100%;
+    background-color: #001529;
     transition: width 0.3s;
   }
   .content {
     display: flex;
-    flex: 1 0;
+    overflow: hidden;
+    height: 100%;
+    flex: 1;
     flex-direction: column;
-    min-width: 0;
-    .main {
-      display: flex;
-      overflow: hidden;
-      flex: 1 0;
-      flex-direction: column;
-      .mainContent {
-        overflow-y: auto;
-        flex: 1 0;
-        padding: 10px;
-      }
+    .common {
+      width: 100%;
+      height: 80px;
+    }
+    .scroll {
+      overflow: auto;
+      padding: 10px;
+      flex: 1;
     }
   }
 }
