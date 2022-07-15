@@ -16,9 +16,5 @@ provide('reload', reload)
 </template>
 
 <style>
-page {
-  width: 100%;
-  height: 100%;
-  background-color: #f7f8fa;
-}
+
 </style>
