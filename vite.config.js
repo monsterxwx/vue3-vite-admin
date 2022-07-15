@@ -29,6 +29,9 @@ export default defineConfig({
       '@': path.join(__dirname, 'src')
     }
   },
+  server: {
+    host: '0.0.0.0'
+  },
   css: {
     preprocessorOptions: {
       scss: {

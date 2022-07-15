@@ -2,6 +2,7 @@
   <div class="Container">
     <div
       class="aside"
+      v-if="!navStore.isSmallScreen"
       :style="{ width: asideWidth }"
     >
       <slot name="aside">
@@ -25,6 +26,8 @@
 </template>
 
 <script setup>
+import useNavStore from '@/store/nav'
+const navStore = useNavStore()
 defineProps({
   asideWidth: {
     type: String,

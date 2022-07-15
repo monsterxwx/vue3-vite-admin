@@ -20,6 +20,16 @@
       </router-view>
     </template>
   </Container>
+  <div class="drawer">
+    <el-drawer
+      v-model="navStore.isShowMenu"
+      :with-header="false"
+      direction="ltr"
+      size="200px"
+    >
+      <Menu />
+    </el-drawer>
+  </div>
 </template>
 
 <script setup>
@@ -33,5 +43,14 @@ const navStore = useNavStore()
 </script>
 
 <style lang="scss" scoped>
+.drawer {
+  :deep(.el-drawer.ltr) {
+    background-color: #001529;
+  }
+  :deep(.el-drawer__body) {
+    padding: 0;
+    background-color: #001529;
+  }
+}
 
 </style>

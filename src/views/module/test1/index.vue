@@ -1,7 +1,7 @@
 <template>
   <div class="base test1">
     <div
-      style="width: 100%;gap: 1rem;"
+      style="width: 100%;gap: 1rem;font-size: 14px;"
       class="flex-between"
     >
       <BaseCard

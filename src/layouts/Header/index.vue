@@ -2,6 +2,7 @@
   <div class="header flex-between">
     <div class="flex-align-center">
       <div
+        v-if="!navStore.isSmallScreen"
         class="ml-15px flex-align-center"
         @click="navStore.changeCollapse"
       >
@@ -18,7 +19,22 @@
           <Expand />
         </el-icon>
       </div>
-      <div class="ml-20px">
+      <div
+        class="ml-20px cursor-pointer"
+        v-else
+        @click="navStore.changeMenuShow"
+      >
+        <el-icon
+          size="22px"
+          color="#409eff"
+        >
+          <Menu />
+        </el-icon>
+      </div>
+      <div
+        v-if="!navStore.isSmallScreen"
+        class=" ml-20px"
+      >
         <el-breadcrumb separator="/">
           <el-breadcrumb-item :to="{ path: '/' }">
             首页
@@ -30,6 +46,12 @@
     </div>
 
     <div class="flex-align-center">
+      <!-- <el-switch
+        @click="toggleDark()"
+        inline-prompt
+        :active-icon="Check"
+        :inactive-icon="Close"
+      /> -->
       <el-icon class="mr-15px">
         <Grid />
       </el-icon>
@@ -67,8 +89,13 @@
 <script setup>
 import useNavStore from '@/store/nav'
 import useFullScreen from '@/hooks/common/useFullScreen.js'
+// import { useDark, useToggle } from '@vueuse/core'
+// import { Check, Close } from '@element-plus/icons-vue'
 const navStore = useNavStore()
 const { fullScreen } = useFullScreen()
+// const isDark = useDark()
+// const toggleDark = useToggle(isDark)
+
 </script>
 
 <style lang="scss" scoped>

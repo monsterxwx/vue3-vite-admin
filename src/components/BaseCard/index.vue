@@ -17,7 +17,6 @@
 .card {
   display: flex;
   margin-bottom: 1rem;
-  font-size: 14px;
   border-radius: 2px;
   background-color: #ffffff;
   flex: 1;

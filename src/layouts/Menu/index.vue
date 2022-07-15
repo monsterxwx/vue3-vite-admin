@@ -72,23 +72,24 @@ const addItem = (value, name) => {
     name
   }
   navStore.addNavItem(Item)
+  if (navStore.isSmallScreen) {
+    // 如果是小屏状态，选择一个标签后自动关闭菜单
+    navStore.changeMenuShow()
+  }
 }
 
 </script>
 
 <style lang="scss" scoped>
-  .el-menu {
-    // 去除右边的线
-    border: none;
-
-    // 去除菜单宽度多1px
-    // border-right-width: 0px;
-  }
-  .el-menu-item {
-    transition: all 0.3s;
-  }
-  .el-menu-item.is-active {
-    color: #ffffff;
-    background-color: #4091f7;
-  }
+.el-menu {
+  // 去除右边的线
+  border: none;
+}
+.el-menu-item {
+  transition: all 0.3s;
+}
+.el-menu-item.is-active {
+  color: #ffffff;
+  background-color: #4091f7;
+}
 </style>
