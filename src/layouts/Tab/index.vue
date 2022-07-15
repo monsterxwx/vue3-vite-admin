@@ -112,7 +112,6 @@ const mouseRightClick = (event, index) => {
 
 <style lang="scss" scoped>
 .header-tab {
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;

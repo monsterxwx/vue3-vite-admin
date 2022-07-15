@@ -15,9 +15,7 @@
 
 <style lang="scss" scoped>
 .card {
-  box-sizing: border-box;
   display: flex;
-  margin-right: 1rem;
   margin-bottom: 1rem;
   font-size: 14px;
   border-radius: 2px;

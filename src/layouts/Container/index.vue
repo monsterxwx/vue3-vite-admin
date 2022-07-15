@@ -41,6 +41,7 @@ defineProps({
   height: 100vh;
   background-color: #f0f2f5;
   .aside {
+    overflow: hidden;
     width: 200px;
     height: 100%;
     background-color: #001529;
@@ -59,9 +60,8 @@ defineProps({
     .scroll {
       overflow-x: hidden;
       overflow-y: auto;
+      padding: 16px;
       min-height: 0;
-
-      // padding: 10px;
       flex: 1;
     }
   }

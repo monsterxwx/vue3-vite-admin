@@ -1,7 +1,7 @@
 <template>
   <div class="base test1">
     <div
-      style="width: 100%;"
+      style="width: 100%;gap: 1rem;"
       class="flex-between"
     >
       <BaseCard
@@ -29,9 +29,9 @@
       <template #content>
         <el-timeline style="margin-top: 50px;">
           <el-timeline-item
-            v-for="(item, index) in tianqiData"
+            v-for="(item1, index) in tianqiData"
             :key="index"
-            :timestamp="item.wea"
+            :timestamp="item1.wea"
           >
             {{ item.week }}
           </el-timeline-item>
@@ -71,8 +71,5 @@ testApi()
   color: #389e0d;
   background-color: #f6ffed;
 }
-.test1 {
-  // padding: 16px;
-  box-sizing: border-box;
-}
+
 </style>
