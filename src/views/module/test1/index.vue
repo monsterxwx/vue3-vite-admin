@@ -5,12 +5,16 @@
       class="flex-between"
     >
       <BaseCard
+        v-waves
         v-for="item in 4"
         :key="item"
       >
         <template #title>
           <div>访问数</div>
-          <div class="btn">
+          <div
+
+            class="btn"
+          >
             月
           </div>
         </template>
