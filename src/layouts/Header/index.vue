@@ -25,7 +25,7 @@
         @click="navStore.changeMenuShow"
       >
         <el-icon
-          size="22px"
+          size="22"
           color="#409eff"
         >
           <Menu />
