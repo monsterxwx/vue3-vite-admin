@@ -11,19 +11,20 @@
     <el-table
       ref="baseTableRef"
       :header-cell-style="{ background: '#fafafa' }"
+      stripe
       border
       height="100%"
       highlight-current-row
       v-bind="$attrs"
     >
       <el-table-column
-        v-if="showSelectColumn"
+        v-if="selectColumn"
         type="selection"
         align="center"
         width="60"
       />
       <el-table-column
-        v-if="showIndexColumn"
+        v-if="indexColumn"
         type="index"
         label="序号"
         align="center"
@@ -125,13 +126,13 @@ defineProps({
     type: Array,
     required: true
   },
-  showIndexColumn: {
+  indexColumn: {
     type: Boolean,
-    default: false
+    default: true
   },
-  showSelectColumn: {
+  selectColumn: {
     type: Boolean,
-    default: false
+    default: true
   },
   pagination: {
     // 是否显示分页

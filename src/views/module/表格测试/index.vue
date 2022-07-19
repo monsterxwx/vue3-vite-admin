@@ -1,7 +1,6 @@
 <template>
   <div class="test2">
     <baseTable
-      stripe
       :data="list"
       v-bind="contentTableConfig"
       @selection-change="selectionChange"

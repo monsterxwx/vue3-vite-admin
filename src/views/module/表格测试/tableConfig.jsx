@@ -85,9 +85,7 @@ const contentTableConfig = {
       slotName: 'handler',
       fixed: 'right'
     }
-  ],
-  showIndexColumn: true,
-  showSelectColumn: true
+  ]
 }
 
 const searchConfig = {
