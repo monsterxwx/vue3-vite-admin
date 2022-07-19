@@ -1,5 +1,8 @@
 <template>
-  <div class="card">
+  <div
+    class="card"
+    :style="{backgroundColor:bgColor}"
+  >
     <div class="title">
       <slot name="title" />
     </div>
@@ -10,7 +13,12 @@
 </template>
 
 <script setup>
-
+defineProps({
+  bgColor: {
+    type: String,
+    default: '#ffffff'
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -18,7 +26,6 @@
   display: flex;
   margin-bottom: 1rem;
   border-radius: 2px;
-  background-color: #ffffff;
   flex: 1;
   flex-direction: column;
   .title {

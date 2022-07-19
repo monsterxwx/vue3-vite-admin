@@ -1,5 +1,20 @@
 <template>
   <div class="base test1">
+    <BaseCard v-waves>
+      <template #title>
+        优惠券
+      </template>
+      <template #content>
+        <div
+          style="width: 100%;gap: 1rem;font-size: 14px;"
+          class="flex"
+        >
+          <CouponCard />
+          <BaseUpload />
+        </div>
+      </template>
+    </BaseCard>
+
     <div
       style="width: 100%;gap: 1rem;font-size: 14px;"
       class="flex-between"
@@ -47,6 +62,8 @@
 
 <script setup>
 import BaseCard from '@/components/BaseCard'
+import CouponCard from '@/components/CouponCard'
+import BaseUpload from '@/components/BaseUpload'
 import axios from '@/api'
 import { ref } from 'vue'
 import dayjs from 'dayjs'
