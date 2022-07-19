@@ -1,5 +1,5 @@
 <template>
-  <div class="base test1">
+  <div class="base">
     <BaseCard v-waves>
       <template #title>
         优惠券
