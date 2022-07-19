@@ -8,50 +8,23 @@
     :unique-opened="true"
     router
   >
-    <el-sub-menu index="1">
+    <el-sub-menu
+      v-for="item in navStore.routerList"
+      :key="item.id"
+      :index="item.id"
+    >
       <template #title>
-        <el-icon>
-          <location />
-        </el-icon>
-        <span>test</span>
+        <el-icon><Menu /></el-icon>
+        <span>{{ item.name }}</span>
       </template>
       <el-menu-item
-        @click="addItem('/test1','默认')"
-        index="/test1"
+        v-for="chil in item.children"
+        :key="chil.id"
+        @click="addItem(chil)"
+        :index="chil.path"
       >
-        默认
-      </el-menu-item>
-      <el-menu-item
-        @click="addItem('/test2','表格')"
-        index="/test2"
-      >
-        表格
-      </el-menu-item>
-      <el-menu-item
-        @click="addItem('/test3','echart')"
-        index="/test3"
-      >
-        echart
-      </el-menu-item>
-      <el-menu-item
-        @click="addItem('/overflow','overflow')"
-        index="/overflow"
-      >
-        overflow
-      </el-menu-item>
-    </el-sub-menu>
-    <el-sub-menu index="2">
-      <template #title>
-        <el-icon>
-          <location />
-        </el-icon>
-        <span>Navigator Two</span>
-      </template>
-      <el-menu-item index="2-1">
-        item one
-      </el-menu-item>
-      <el-menu-item index="2-2">
-        item two
+        <el-icon><Wallet /></el-icon>
+        <span>{{ chil.name }}</span>
       </el-menu-item>
     </el-sub-menu>
   </el-menu>
@@ -66,10 +39,10 @@ defineProps({
   }
 })
 const navStore = useNavStore()
-const addItem = (value, name) => {
+const addItem = (item) => {
   const Item = {
-    path: value,
-    name
+    path: item.path,
+    name: item.name
   }
   navStore.addNavItem(Item)
   if (navStore.isSmallScreen) {

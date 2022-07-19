@@ -12,7 +12,42 @@ const useNavStore = defineStore({
       defaultPath: { name: '首页', path: '/main' },
       currentRouterPath: { name: '首页', path: '/main' },
       mouseSelectPath: '', // 鼠标移动到标签对应的path，用于是否显示关闭按钮
-      navList: [{ name: '首页', path: '/main' }]
+      navList: [{ name: '首页', path: '/main' }],
+      routerList: [
+        {
+          name: '组件测试',
+          id: '1',
+          children: [
+            {
+              path: '/test1',
+              name: '默认',
+              id: '1-1'
+            },
+            {
+              path: '/test2',
+              name: '表格',
+              id: '1-2'
+            },
+            {
+              path: '/test3',
+              name: 'echart',
+              id: '1-3'
+            }, {
+              path: '/test4',
+              name: '表单',
+              id: '1-4'
+            }, {
+              path: '/overflow',
+              name: 'overflow',
+              id: '1-5'
+            }
+          ]
+        },
+        {
+          name: '其他',
+          id: '2'
+        }
+      ]
     }
   },
   actions: {
