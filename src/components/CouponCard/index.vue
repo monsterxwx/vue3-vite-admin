@@ -1,5 +1,5 @@
 <template>
-  <div class="coupon-card mb">
+  <div class="coupon-card shadow-lg mb">
     <div class="coupon ">
       <div class="title">
         <slot name="title">
@@ -36,7 +36,6 @@
 <style lang="scss" scoped>
 .coupon-card {
   width: 200px;
-  box-shadow: rgb(0 0 0 / 20%) 0 20px 30px;
   .coupon {
     position: relative;
     width: 200px;

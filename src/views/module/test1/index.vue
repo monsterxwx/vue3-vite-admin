@@ -1,6 +1,6 @@
 <template>
   <div class="base">
-    <BaseCard v-waves>
+    <BaseCard>
       <template #title>
         优惠券
       </template>
