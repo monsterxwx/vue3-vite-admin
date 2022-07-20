@@ -1,3 +1,4 @@
+import { ElButton } from 'element-plus'
 const formConfig = {
   propList: [
     {
@@ -49,10 +50,13 @@ const formConfig = {
     },
     {
       type: 'date',
+      dateType: 'daterange',
       prop: 'test5',
       label: '测试5',
       date: {
-        placeholder: '请选择日期'
+        'start-placeholder': 'Start date',
+        'end-placeholder': 'End date',
+        'range-separator': 'To'
       }
     },
     {
@@ -64,6 +68,20 @@ const formConfig = {
       type: 'switch',
       prop: 'test7',
       label: '测试7'
+    },
+    {
+      type: 'slot',
+      prop: 'tests',
+      label: 'slot'
+    },
+    {
+      type: 'render',
+      render: () => {
+        return (
+        <ElButton>render</ElButton>
+        )
+      },
+      label: 'render'
     },
     {
       type: 'select',
