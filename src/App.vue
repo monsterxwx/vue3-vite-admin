@@ -1,6 +1,25 @@
 <script setup>
-import { ref, onMounted, provide, nextTick } from 'vue'
+import { ref, provide, nextTick, watch } from 'vue'
 import useNavStore from '@/store/nav'
+import { useWindowSize } from '@vueuse/core'
+
+const navStore = useNavStore()
+const { width } = useWindowSize()
+
+watch(width, () => {
+  console.log('浏览器宽度', width.value)
+  if (width.value < 768) {
+    // 当屏幕小于768时，执行代码段（手机端）
+    navStore.changeScreen(true)
+  } else {
+    // 其他时候，执行（比如电脑端）
+    navStore.changeScreen(false)
+    navStore.changeMenuShow(false)
+  }
+}, {
+  immediate: true
+})
+
 const isRouterAlive = ref(true)
 
 const reload = () => {
@@ -11,22 +30,6 @@ const reload = () => {
 }
 provide('reload', reload)
 
-// 监听浏览器屏幕大小
-const navStore = useNavStore()
-const screenWidth = ref('')
-onMounted(() => {
-  window.onresize = () => {
-    screenWidth.value = document.body.clientWidth
-    if (screenWidth.value < 768) {
-      navStore.changeScreen(true)
-    // 当屏幕小于768时，执行代码段（手机端）
-    } else {
-    // 其他时候，执行（比如电脑端）
-      navStore.changeScreen(false)
-      navStore.changeMenuShow(false)
-    }
-  }
-})
 </script>
 
 <template>

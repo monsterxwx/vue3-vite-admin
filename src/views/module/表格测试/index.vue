@@ -1,18 +1,18 @@
 <template>
-  <div class="test2">
+  <div class="base">
     <baseTable
       :data="list"
-      v-bind="contentTableConfig"
+      v-bind="tableConfig"
       @selection-change="selectionChange"
       @current-change="test1"
       @page-change="pageChange"
     >
-      <!-- <template #search>
+      <template #search>
         <baseSearchForm
           v-bind="searchConfig"
           @search="search"
         />
-      </template> -->
+      </template>
       <template #status="scope">
         <el-switch v-model="scope.row.enable" />
       </template>
@@ -32,140 +32,24 @@
 // 表格测试
 import baseTable from '@/components/BaseTable'
 import baseSearchForm from '@/components/SearchForm'
-import { contentTableConfig, searchConfig } from './tableConfig'
-import { reactive } from 'vue'
+import tableConfig from './tableConfig'
+import searchConfig from './searchConfig'
 
-const list = reactive([
-  {
-    name: '1',
-    realname: '2',
-    cellphone: '3',
+const list = Array.from({ length: 20 }).map((item, index) => {
+  return {
+    name: 'test' + index,
+    realname: index * 2,
+    cellphone: index * 3,
     enable: true,
-    createAt: '2022-03-29',
+    createAt: '2022-03-' + index,
     updateAt: '2022-04-30答复奇偶的叫法欧舒丹即佛爱圣诞节佛山',
     test1: 'test1',
     test2: 'test2',
     test3: 'test3',
     more: 'more'
-  },
-  {
-    name: '11',
-    realname: '22',
-    cellphone: '33',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30',
-    more: 'more'
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
-  },
-  {
-    name: '111',
-    realname: '222',
-    cellphone: '333',
-    enable: true,
-    createAt: '2022-03-29',
-    updateAt: '2022-04-30'
-
   }
-])
+})
+
 const selectionChange = (res) => {
   console.log(res)
 }
@@ -174,8 +58,9 @@ const showList = () => {
   console.log(list)
 }
 const test1 = (e) => {
-  console.log(e)
+  console.log('总', e)
 }
+
 const pageChange = (e) => {
   console.log('页数', e)
 }

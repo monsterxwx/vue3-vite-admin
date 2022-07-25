@@ -1,5 +1,5 @@
 import { ElButton, ElTableColumn } from 'element-plus'
-const contentTableConfig = {
+const tableConfig = {
   title: '用户列表',
   propList: [
     {
@@ -43,18 +43,6 @@ const contentTableConfig = {
       slotName: 'createAt'
     },
     {
-      prop: 'createAt1',
-      label: '创建时间',
-      // minWidth: '250',
-      slotName: 'createAt'
-    },
-    {
-      prop: 'createAt2',
-      label: '创建时间',
-      // minWidth: '250',
-      slotName: 'createAt'
-    },
-    {
       prop: 'more',
       // minWidth: '150',
       renderHeader: (scope) => {
@@ -88,47 +76,4 @@ const contentTableConfig = {
   ]
 }
 
-const searchConfig = {
-  searchPropList: [
-    {
-      label: '名称',
-      type: 'text',
-      prop: 'test1'
-    },
-    {
-      label: '名称1',
-      type: 'text',
-      prop: 'test11'
-    },
-    {
-      label: '名称2',
-      type: 'text',
-      prop: 'test111'
-    },
-    {
-      label: '名3',
-      type: 'text',
-      prop: 'test1111'
-    },
-    {
-      label: '名344',
-      type: 'select',
-      placeholder: '请选择你的值',
-      prop: 'test2',
-      enum: [
-        {
-          value: '1',
-          label: '1'
-        },
-        {
-          value: '2',
-          label: '2'
-        }
-      ]
-    }
-  ]
-}
-export {
-  contentTableConfig,
-  searchConfig
-}
+export default tableConfig

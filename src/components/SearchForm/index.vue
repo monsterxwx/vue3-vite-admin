@@ -2,7 +2,7 @@
   <div class="baseSearch">
     <div class="left">
       <template
-        v-for="item in getSearchList"
+        v-for="item in searchPropList"
         :key="item.prop"
       >
         <div class="itemSearch">
@@ -112,29 +112,16 @@
       >
         重置
       </el-button>
-
-      <el-button
-        type="primary"
-        link
-        class="search-isOpen"
-        @click="searchShow = !searchShow"
-        v-if="searchPropList.length > maxLength"
-      >
-        {{ searchShow ? "合并" : "展开" }}
-        <el-icon class="el-icon--right">
-          <component :is="searchShow ? ArrowUp : ArrowDown" />
-        </el-icon>
-      </el-button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { Delete, Search, ArrowUp, ArrowDown } from '@element-plus/icons-vue'
-import { reactive, ref, computed } from 'vue'
+import { Delete, Search } from '@element-plus/icons-vue'
+import { reactive } from 'vue'
 
 const searchParam = reactive({})
-const props = defineProps({
+defineProps({
   searchPropList: {
     type: Array,
     required: true
@@ -156,15 +143,6 @@ const reset = () => {
   emit('search', searchParam)
 }
 
-// 一行最大的搜索数量
-const maxLength = ref(4)
-// 是否展开搜索项
-const searchShow = ref(false)
-// 根据是否展开配置搜索项长度
-const getSearchList = computed(() => {
-  if (searchShow.value) return props.searchPropList
-  return props.searchPropList.slice(0, maxLength.value)
-})
 </script>
 
 <style lang="scss" scoped>
@@ -172,8 +150,13 @@ const getSearchList = computed(() => {
   display: flex;
   margin-bottom: 10px;
   width: 100%;
+  flex-wrap: wrap;
+  gap: 8px 12px;
   .left {
     display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    max-width: 1024PX;
     .itemSearch {
       display: flex;
       align-items: center;
@@ -183,12 +166,11 @@ const getSearchList = computed(() => {
         white-space: nowrap;
         color: #606244;
       }
-
-      // .el-input,
-      // .el-select,
-      // .el-date-editor--timerange {
-      //   width: 210px;
-      // }
+      .el-input,
+      .el-select,
+      .el-date-editor--timerange {
+        width: 210px;
+      }
 
       // 去除时间选择器上下 padding
       .el-range-editor.el-input__wrapper {

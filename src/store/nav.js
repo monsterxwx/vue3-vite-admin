@@ -9,10 +9,10 @@ const useNavStore = defineStore({
       collapse: false, // 是否收缩菜单
       isSmallScreen: false, // 是否小屏状态，小屏状态时左侧menu通过抽屉形式弹出
       isShowMenu: false, // 小屏状态使用，记录是否需要显示菜单
-      defaultPath: { name: '首页', path: '/main' },
-      currentRouterPath: { name: '首页', path: '/main' },
+      defaultPath: { name: '默认', path: '/test1' },
+      currentRouterPath: { name: '默认', path: '/test1' },
       mouseSelectPath: '', // 鼠标移动到标签对应的path，用于是否显示关闭按钮
-      navList: [{ name: '首页', path: '/main' }],
+      navList: [{ name: '默认', path: '/test1' }],
       routerList: [
         {
           name: '组件测试',
