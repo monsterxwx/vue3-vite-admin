@@ -153,10 +153,14 @@ const reset = () => {
   flex-wrap: wrap;
   gap: 8px 12px;
   .left {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    max-width: 1024PX;
+    // display: flex;
+    // gap: 8px;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    max-width: 1050PX;
+    row-gap: 10px;
+    column-gap: 10px;
     .itemSearch {
       display: flex;
       align-items: center;
@@ -166,11 +170,12 @@ const reset = () => {
         white-space: nowrap;
         color: #606244;
       }
-      .el-input,
-      .el-select,
-      .el-date-editor--timerange {
-        width: 210px;
-      }
+
+      // .el-input,
+      // .el-select,
+      // .el-date-editor--timerange {
+      //   width: 210px;
+      // }
 
       // 去除时间选择器上下 padding
       .el-range-editor.el-input__wrapper {
