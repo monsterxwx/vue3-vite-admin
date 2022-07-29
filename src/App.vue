@@ -1,4 +1,5 @@
 <script setup>
+import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 import { ref, provide, nextTick, watch } from 'vue'
 import useNavStore from '@/store/nav'
 import { useWindowSize } from '@vueuse/core'
@@ -33,7 +34,9 @@ provide('reload', reload)
 </script>
 
 <template>
-  <router-view v-if="isRouterAlive" />
+  <el-config-provider :locale="zhCn">
+    <router-view v-if="isRouterAlive" />
+  </el-config-provider>
 </template>
 
 <style>
