@@ -10,7 +10,7 @@
           class="flex"
         >
           <CouponCard />
-          <BaseUpload />
+          <!-- <BaseUpload /> -->
         </div>
       </template>
     </BaseCard>
@@ -63,7 +63,7 @@
 <script setup>
 import BaseCard from '@/components/BaseCard'
 import CouponCard from '@/components/CouponCard'
-import BaseUpload from '@/components/BaseUpload'
+// import BaseUpload from '@/components/BaseUpload'
 import axios from '@/api'
 import { ref } from 'vue'
 import dayjs from 'dayjs'

@@ -8,48 +8,20 @@
     :unique-opened="true"
     router
   >
-    <el-sub-menu
-      v-for="item in navStore.routerList"
-      :key="item.id"
-      :index="item.id"
-    >
-      <template #title>
-        <el-icon><Menu /></el-icon>
-        <span>{{ item.name }}</span>
-      </template>
-      <el-menu-item
-        v-for="chil in item.children"
-        :key="chil.id"
-        @click="addItem(chil)"
-        :index="chil.path"
-      >
-        <el-icon><Wallet /></el-icon>
-        <span>{{ chil.name }}</span>
-      </el-menu-item>
-    </el-sub-menu>
+    <MenuItem :data="navStore.routerList" />
   </el-menu>
 </template>
 
 <script setup>
+import MenuItem from './MenuItem'
 import useNavStore from '@/store/nav'
+const navStore = useNavStore()
 defineProps({
   collapse: {
     type: Boolean,
     default: false
   }
 })
-const navStore = useNavStore()
-const addItem = (item) => {
-  const Item = {
-    path: item.path,
-    name: item.name
-  }
-  navStore.addNavItem(Item)
-  if (navStore.isSmallScreen) {
-    // 如果是小屏状态，选择一个标签后自动关闭菜单
-    navStore.changeMenuShow()
-  }
-}
 
 </script>
 

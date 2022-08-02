@@ -22,6 +22,7 @@ const useNavStore = defineStore({
               path: '/test1',
               name: '默认',
               id: '1-1'
+
             },
             {
               path: '/test2',
@@ -106,7 +107,7 @@ const useNavStore = defineStore({
   },
   // 开启数据缓存
   persist: {
-    enabled: true
+    enabled: false
   }
 })
 export default useNavStore
