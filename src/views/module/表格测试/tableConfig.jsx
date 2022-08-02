@@ -45,7 +45,7 @@ const tableConfig = {
     {
       prop: 'more',
       // minWidth: '150',
-      renderHeader: (scope) => {
+      header: (scope) => {
         return (
           <ElButton>自定义表头</ElButton>
         )

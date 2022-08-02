@@ -48,10 +48,10 @@
           <!-- 自定义 header -->
           <template
             #header
-            v-if="propItem.renderHeader"
+            v-if="propItem.header"
           >
             <component
-              :is="propItem.renderHeader"
+              :is="propItem.header"
               :row="propItem"
             />
           </template>
