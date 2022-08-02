@@ -19,6 +19,10 @@ const routes = [
         component: () => import('@/views/module/表格测试')
       },
       {
+        path: '/test22',
+        component: () => import('@/views/module/表格测试/index1')
+      },
+      {
         path: '/test3',
         component: () => import('@/views/module/echarts测试')
       },

@@ -25,9 +25,20 @@ const useNavStore = defineStore({
 
             },
             {
-              path: '/test2',
               name: '表格',
-              id: '1-2'
+              id: '1-2',
+              children: [
+                {
+                  path: '/test2',
+                  name: '普通表格',
+                  id: '1-2-1'
+                },
+                {
+                  path: '/test22',
+                  name: 'render表格',
+                  id: '1-2-2'
+                }
+              ]
             },
             {
               path: '/test3',
