@@ -55,7 +55,7 @@ const tableConfig = {
       prop: 'updateAt',
       label: '更新时间',
       slotName: 'updateAt',
-      showTip: true
+      'show-overflow-tooltip': true
     },
     {
       mulHeaderRender: (scope) => {

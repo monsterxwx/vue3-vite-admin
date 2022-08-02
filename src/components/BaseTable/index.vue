@@ -75,20 +75,6 @@
                 class="table-image"
                 preview-teleported
               />
-              <!-- showTip: 对于内容超过一行的开启省略，鼠标移入后显示在上方 -->
-              <el-popover
-                v-if="propItem.showTip"
-                placement="top"
-                :width="180"
-                trigger="hover"
-                :content="scope.row[propItem.prop]"
-              >
-                <template #reference>
-                  <span class="ellipsis">
-                    {{ scope.row[propItem.prop] }}
-                  </span>
-                </template>
-              </el-popover>
               <span v-else>
                 {{ scope.row[propItem.prop] }}
               </span>
