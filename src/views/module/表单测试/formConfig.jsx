@@ -11,12 +11,26 @@ const formConfig = {
           message: 'Please select Activity count',
           trigger: 'blur'
         }
-      ]
+      ],
+      col: {
+        span: 12
+      }
     },
     {
       type: 'slider',
       prop: 'test2',
-      label: '测试2'
+      label: '测试2',
+      col: {
+        span: 12
+      }
+    },
+    {
+      type: 'slider',
+      prop: 'test222',
+      label: '测试222',
+      col: {
+        span: 12
+      }
     },
     {
       type: 'radio',
@@ -31,7 +45,10 @@ const formConfig = {
         }
       ],
       prop: 'test3',
-      label: '测试3'
+      label: '测试3',
+      col: {
+        span: 12
+      }
     },
     {
       type: 'checkbox',
@@ -57,6 +74,9 @@ const formConfig = {
         'start-placeholder': 'Start date',
         'end-placeholder': 'End date',
         'range-separator': 'To'
+      },
+      col: {
+        span: 12
       }
     },
     {

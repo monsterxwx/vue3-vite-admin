@@ -59,6 +59,6 @@ const confim = () => {
 
 <style lang="scss" scoped>
 .form {
-  width: 500px;
+  width: 700px;
 }
 </style>
