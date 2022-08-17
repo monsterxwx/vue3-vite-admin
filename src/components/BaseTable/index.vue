@@ -26,6 +26,7 @@
       <el-table-column
         v-if="indexColumn"
         type="index"
+        :index="cumsumIndex"
         label="序号"
         align="center"
         width="80"
@@ -90,7 +91,7 @@
           background
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
-          :page-sizes="[100, 200, 300, 400]"
+          :page-sizes="[20, 50, 100, 200]"
           :page-size="50"
           layout="total, sizes, prev, pager, next, jumper"
           :total="total"
@@ -101,9 +102,7 @@
 </template>
 
 <script setup>
-
-// import { Delete, Edit, CirclePlus, RefreshRight } from '@element-plus/icons-vue'
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     default: ''
@@ -125,9 +124,17 @@ defineProps({
     type: Boolean,
     default: true
   },
+  pageNum: {
+    type: Number,
+    default: 1
+  },
+  pageSize: {
+    type: Number,
+    default: 10
+  },
   total: {
     type: Number,
-    default: 100
+    default: 0
   }
 })
 const emit = defineEmits(['pageChange', 'sizeChange'])
@@ -139,7 +146,10 @@ const handleSizeChange = (value) => {
 const handleCurrentChange = (value) => {
   emit('pageChange', value)
 }
-
+// 自定义序号
+const cumsumIndex = (index) => {
+  return (props.pageNum - 1) * props.pageSize + index + 1
+}
 </script>
 
 <style lang="scss" scoped>
