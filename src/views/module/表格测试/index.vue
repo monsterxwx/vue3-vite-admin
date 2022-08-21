@@ -1,6 +1,6 @@
 <template>
   <div class="base">
-    <baseTable
+    <BaseTable
       :data="list"
       v-bind="tableConfig"
       @selection-change="selectionChange"
@@ -24,13 +24,13 @@
           hh
         </el-button>
       </template>
-    </baseTable>
+    </BaseTable>
   </div>
 </template>
 
 <script setup>
 // 表格测试
-import baseTable from '@/components/BaseTable'
+import BaseTable from '@/components/BaseTable'
 import baseSearchForm from '@/components/SearchForm'
 import tableConfig from './tableConfig'
 import searchConfig from './searchConfig'

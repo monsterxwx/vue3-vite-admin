@@ -1,6 +1,6 @@
 <template>
   <div class="base">
-    <renderTable
+    <RenderTable
       ref="el"
       :data="data"
       :columns="tableColumns"
@@ -10,7 +10,7 @@
 </template>
 <script setup lang="jsx">
 import { reactive, ref } from 'vue'
-import renderTable from '@/components/renderTable'
+import RenderTable from '@/components/RenderTable'
 
 const data = reactive([
   { name: 'ceshi1', child1: 'child1', child2: 'child2' },
