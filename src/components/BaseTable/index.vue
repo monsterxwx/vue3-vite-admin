@@ -31,58 +31,21 @@
         align="center"
         width="80"
       />
-      <template
-        v-for="propItem in propList"
-        :key="propItem.prop"
+      <TableColumn
+        v-for="item in propList"
+        :key="item.prop || item.label"
+        :col="item"
       >
-        <!-- 多级表头 render渲染 -->
-        <template v-if="propItem.mulHeaderRender">
-          <component
-            :is="propItem.mulHeaderRender"
+        <template
+          v-for="slot in Object.keys(customSlots)"
+          #[slot]="scope"
+        >
+          <slot
+            :name="slot"
+            v-bind="scope"
           />
         </template>
-
-        <el-table-column
-          v-else
-          v-bind="propItem"
-        >
-          <!-- 自定义 header -->
-          <template
-            #header
-            v-if="propItem.header"
-          >
-            <component
-              :is="propItem.header"
-              :row="propItem"
-            />
-          </template>
-          <template #default="scope">
-            <component
-              v-if="propItem.render"
-              :is="propItem.render"
-              :row="scope.row"
-            />
-            <slot
-              v-else
-              :name="propItem.slotName"
-              :row="scope.row"
-            >
-              <!-- 图片(自带预览),只支持单张图片，多张使用插槽自定义 -->
-              <el-image
-                v-if="propItem.image"
-                :src="scope.row[propItem.prop]"
-                :preview-src-list="[scope.row[propItem.prop]]"
-                fit="cover"
-                class="table-image"
-                preview-teleported
-              />
-              <span v-else>
-                {{ scope.row[propItem.prop] }}
-              </span>
-            </slot>
-          </template>
-        </el-table-column>
-      </template>
+      </TableColumn>
     </el-table>
     <div class="footer">
       <slot name="footer">
@@ -102,6 +65,8 @@
 </template>
 
 <script setup>
+import { getCurrentInstance, reactive } from 'vue'
+import TableColumn from './TableColumn'
 const props = defineProps({
   title: {
     type: String,
@@ -136,6 +101,10 @@ const props = defineProps({
     type: Number,
     default: 0
   }
+})
+const { proxy } = getCurrentInstance()
+const customSlots = reactive({
+  ...proxy.$slots
 })
 const emit = defineEmits(['pageChange', 'sizeChange'])
 // 每页显示页数发生改变

@@ -1,16 +1,15 @@
-import { ElButton, ElTableColumn } from 'element-plus'
+import { ElButton, ElMessage } from 'element-plus'
 const tableConfig = {
   title: '用户列表',
   propList: [
     {
       prop: 'name',
       label: '用户名'
-      // minWidth: '100'
+
     },
     {
       prop: 'realname',
       label: '真实姓名',
-      // minWidth: '100',
       render: (scope) => {
         return (
           <ElButton
@@ -28,23 +27,21 @@ const tableConfig = {
     {
       prop: 'cellphone',
       label: '手机号码'
-      // minWidth: '100'
     },
     {
       prop: 'enable',
       label: '状态',
-      // minWidth: '100',
       slotName: 'status'
     },
     {
       prop: 'createAt',
       label: '创建时间',
-      // minWidth: '250',
-      slotName: 'createAt'
+      slotName: 'createAt',
+      minWidth: '120'
     },
     {
       prop: 'more',
-      // minWidth: '150',
+      minWidth: '130',
       header: (scope) => {
         return (
           <ElButton>自定义表头</ElButton>
@@ -58,15 +55,22 @@ const tableConfig = {
       'show-overflow-tooltip': true
     },
     {
-      mulHeaderRender: (scope) => {
-        return (
-        <ElTableColumn label="多级表头">
-            <ElTableColumn prop="test1" label="State" width="120" />
-            <ElTableColumn prop="test2" label="City" width="120" />
-            <ElTableColumn prop="test3" label="City2" width="120" />
-        </ElTableColumn>
-        )
-      }
+      label: '多级表头',
+      children: [
+        {
+          prop: 'test1',
+          label: 'State',
+          width: '120'
+        }, {
+          prop: 'test2',
+          label: 'City',
+          width: '120'
+        }, {
+          prop: 'test3',
+          label: 'City2',
+          width: '120'
+        }
+      ]
     },
     {
       label: '操作',
