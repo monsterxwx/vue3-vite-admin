@@ -21,35 +21,35 @@
             <el-input
               v-if="item.type === 'input'"
               v-model="FormData[item.prop]"
-              v-bind="item.input"
+              v-bind="item.props"
             />
             <!-- 滑块 -->
             <el-slider
               v-if="item.type === 'slider'"
               v-model="FormData[item.prop]"
-              v-bind="item.slider"
+              v-bind="item.props"
             />
             <!-- 单选 -->
             <el-radio-group
               v-if="item.type === 'radio'"
               v-model="FormData[item.prop]"
-              v-bind="item.group"
+              v-bind="item.groupProps"
             >
               <template
-                v-for="ra in item.radioList"
+                v-for="ra in item.data"
                 :key="ra.value"
               >
                 <el-radio-button
                   v-if="item.radioType==='radio-button'"
                   :label="ra.value"
-                  v-bind="item.radio"
+                  v-bind="item.props"
                 >
                   {{ ra.label }}
                 </el-radio-button>
                 <el-radio
                   v-else
                   :label="ra.value"
-                  v-bind="item.radio"
+                  v-bind="item.props"
                 >
                   {{ ra.label }}
                 </el-radio>
@@ -59,13 +59,13 @@
             <el-checkbox-group
               v-if="item.type === 'checkbox'"
               v-model="FormData[item.prop]"
-              v-bind="item.group"
+              v-bind="item.groupProps"
             >
               <el-checkbox
-                v-for="ch in item.checkboxList"
+                v-for="ch in item.data"
                 :label="ch.value"
                 :key="ch.value"
-                v-bind="item.checkbox"
+                v-bind="item.props"
               >
                 {{ ch.label }}
               </el-checkbox>
@@ -75,7 +75,7 @@
               v-if="item.type === 'date'"
               :type="item.dateType || 'date'"
               v-model="FormData[item.prop]"
-              v-bind="item.date"
+              v-bind="item.props"
             />
             <!-- 时间 -->
             <el-time-select
@@ -87,16 +87,16 @@
             <el-switch
               v-if="item.type === 'switch'"
               v-model="FormData[item.prop]"
-              v-bind="item.switch"
+              v-bind="item.props"
             />
             <!-- 下拉框 -->
             <el-select
               v-if="item.type === 'select'"
               v-model="FormData[item.prop]"
-              v-bind="item.select"
+              v-bind="item.props"
             >
               <el-option
-                v-for="op in item.selectList"
+                v-for="op in item.data"
                 :label="op.label"
                 :value="op.value"
                 :key="op.value"

@@ -15,7 +15,7 @@ specifiers:
   eslint-plugin-n: ^15.0.0
   eslint-plugin-promise: ^6.0.0
   eslint-plugin-vue: ^9.1.1
-  lodash: ^4.17.21
+  lodash-es: ^4.17.21
   normalize.css: ^8.0.1
   nprogress: ^0.2.0
   pinia: ^2.0.14
@@ -45,7 +45,7 @@ dependencies:
   dayjs: 1.11.3
   echarts: 5.3.3
   element-plus: 2.2.6_vue@3.2.37
-  lodash: 4.17.21
+  lodash-es: 4.17.21
   normalize.css: 8.0.1
   nprogress: 0.2.0
   pinia: 2.0.14_vue@3.2.37
@@ -2556,7 +2556,7 @@ packages:
     dev: true
 
   /lodash-es/4.17.21:
-    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/lodash-es/-/lodash-es-4.17.21.tgz}
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
     dev: false
 
   /lodash-unified/1.0.2_3ib2ivapxullxkx3xftsimdk7u:

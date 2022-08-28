@@ -34,7 +34,7 @@ const formConfig = {
     },
     {
       type: 'radio',
-      radioList: [
+      data: [
         {
           value: '1',
           label: '11'
@@ -52,7 +52,7 @@ const formConfig = {
     },
     {
       type: 'checkbox',
-      checkboxList: [
+      data: [
         {
           value: '1',
           label: '11'
@@ -107,7 +107,7 @@ const formConfig = {
       type: 'select',
       prop: 'test8',
       label: '测试8',
-      selectList: [
+      data: [
         {
           value: '1',
           label: '11'
