@@ -1,6 +1,6 @@
 <script setup lang="jsx">
 import {
-  getCurrentInstance, useAttrs, defineProps, defineExpose, computed, ref
+  getCurrentInstance, useAttrs, computed, ref
 } from 'vue'
 
 let key = 0
