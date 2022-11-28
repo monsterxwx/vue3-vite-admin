@@ -21,7 +21,7 @@
     >
       <BaseCard
         v-waves
-        v-for="item in 4"
+        v-for="item in 3"
         :key="item"
       >
         <template #title>
@@ -37,11 +37,37 @@
           <div>ee</div>
         </template>
       </BaseCard>
+      <BaseCard>
+        <template #title>
+          <div>使用svg图标</div>
+        </template>
+        <template #content>
+          <SvgIcon
+            size="20"
+            name="vip"
+          />
+          <SvgIcon
+            size="20"
+            name="say"
+          />
+          <SvgIcon
+            size="20"
+            name="money"
+          />
+          <SvgIcon
+            size="20"
+            name="safe"
+            color="green"
+          />
+          <SvgIcon
+            size="20"
+            name="test"
+            color="red"
+          />
+        </template>
+      </BaseCard>
     </div>
-    <BaseCard
-      v-for="item in 3"
-      :key="item"
-    >
+    <BaseCard>
       <template #title>
         五日内天气，现在时间：{{ nowTime }}
       </template>
@@ -63,7 +89,7 @@
 <script setup>
 import BaseCard from '@/components/BaseCard'
 import CouponCard from '@/components/CouponCard'
-// import BaseUpload from '@/components/BaseUpload'
+import SvgIcon from '@/components/SvgIcon.vue'
 import axios from '@/api'
 import { ref } from 'vue'
 import dayjs from 'dayjs'
@@ -81,6 +107,7 @@ const testApi = () => {
   })
 }
 testApi()
+
 </script>
 
 <style lang="scss" scoped>

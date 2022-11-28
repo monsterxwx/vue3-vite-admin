@@ -6,6 +6,7 @@ import 'uno.css'
 import './styles/index.scss' // 加载全局样式
 import directives from '@/directives'
 import { setupPlugins } from './plugins'
+import 'virtual:svg-icons-register'
 
 const app = createApp(App)
 setupPlugins(app)
