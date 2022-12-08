@@ -1,12 +1,12 @@
 <template>
   <div
-    class="rightMenu"
+    class="right-menu"
     :style="{ left: menuLeft + 'px', top: menuTop + 'px' }"
     v-if="modelValue"
     ref="rightMenuRef"
   >
     <div
-      class="item"
+      class="right-menu-item"
       @click="itemSelectClick(item)"
       v-for="item in rightMenuList"
       :key="item"
@@ -75,7 +75,7 @@ const itemSelectClick = (item) => {
 </script>
 
 <style lang="scss" scoped>
-  .rightMenu {
+  .right-menu {
     position: fixed;
     z-index: 999;
     padding: 5px 0;
@@ -86,7 +86,7 @@ const itemSelectClick = (item) => {
       rgb(0 0 0 / 20%) 0 12px 28px 0,
       rgb(0 0 0 / 10%) 0 2px 4px 0,
       rgb(255 255 255 / 5%) 0 0 0 1px inset;
-    .item {
+    .right-menu-item {
       padding: 10px;
       font-size: 14px;
       color: #666666;
