@@ -5,41 +5,49 @@
 import './waves.scss'
 const waves = {
   mounted (el, binding) {
-    el.addEventListener('click', e => {
-      const customOpts = Object.assign({}, binding.value)
-      const opts = Object.assign({
-        ele: el, // 波纹作用元素
-        type: 'hit', // hit点击位置扩散center中心点扩展
-        color: 'rgba(0, 0, 0, 0.15)' // 波纹颜色
-      }, customOpts)
-      const target = opts.ele
+    el.waveFn = (e) => {
+      const target = el // 波纹作用的目标元素
+      const targetBgColor = binding.value // 波纹颜色（不传递就使用默认值）
+      // 有dom元素才去做操作
       if (target) {
-        target.style.position = 'relative'
-        target.style.overflow = 'hidden'
-        const rect = target.getBoundingClientRect()
-        let ripple = target.querySelector('.waves-ripple')
+        target.style.position = 'relative' // 开启绝对定位，点击时的参照物（注释掉看效果明显）
+        target.style.overflow = 'hidden' // 隐藏涟漪圆圈（注释掉看效果明显）
+        const rect = target.getBoundingClientRect() // 获取dom元素的位置和宽高
+        let ripple = target.querySelector('.wavesRipple') // 获取涟漪dom元素，一开始是没有的
         if (!ripple) {
-          ripple = document.createElement('span')
-          ripple.className = 'waves-ripple'
-          ripple.style.height = ripple.style.width = Math.max(rect.width, rect.height) + 'px'
-          target.appendChild(ripple)
+          // 既然没有，那咱就创建一个涟漪dom元素
+          ripple = document.createElement('span') // 创建一个span标签作为涟漪dom元素
+          ripple.className = 'wavesRipple' // 原生js修改类名主要有三种方式：className、setAttribute()、和classList
+          ripple.style.height = Math.max(rect.width, rect.height) + 'px' // 宽高中谁的值大，就以谁为涟漪圆的直径
+          ripple.style.width = Math.max(rect.width, rect.height) + 'px' // Math.max()多个数据中取最大值
+          target.appendChild(ripple) // 将这个涟漪元素作为子元素追加到目标dom上
         } else {
-          ripple.className = 'waves-ripple'
+          ripple.className = 'wavesRipple' // 有的话也别忘了重新指定
         }
-        switch (opts.type) {
-          case 'center':
-            ripple.style.top = (rect.height / 2 - ripple.offsetHeight / 2) + 'px'
-            ripple.style.left = (rect.width / 2 - ripple.offsetWidth / 2) + 'px'
-            break
-          default:
-            ripple.style.top = (e.pageY - rect.top - ripple.offsetHeight / 2 - document.body.scrollTop) + 'px'
-            ripple.style.left = (e.pageX - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft) + 'px'
-        }
-        ripple.style.backgroundColor = opts.color
-        ripple.className = 'waves-ripple z-active'
-        return false
+        // 计算涟漪dom的top距离值
+        ripple.style.top =
+              (e.pageY -
+                  rect.top -
+                  ripple.offsetHeight / 2 -
+                  document.documentElement.scrollTop || // 兼容写法 document.documentElement.scrollTop和document.body.scrollTop只有一个会生效
+                  document.body.scrollTop) + 'px'
+        // 计算涟漪dom的left距离值
+        ripple.style.left =
+              (e.pageX -
+                  rect.left -
+                  ripple.offsetWidth / 2 -
+                  document.documentElement.scrollLeft ||
+                  document.body.scrollLeft) + 'px'
+        ripple.style.backgroundColor = targetBgColor // 设置背景色，不传color的话，就使用默认背景色
+        ripple.className = 'wavesRipple live'
       }
-    }, false)
+    }
+    el.addEventListener('click', el.waveFn,
+      false // 冒泡false，捕获true
+    )
+  },
+  unmounted (el, binding, vnode) {
+    el.removeEventListener('click', el.waveFn)
   }
 }
 
