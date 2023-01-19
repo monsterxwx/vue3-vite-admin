@@ -21,8 +21,8 @@
         :index="item.path"
         v-else
       >
+        <el-icon><Wallet /></el-icon>
         <template #title>
-          <el-icon><Wallet /></el-icon>
           <span>{{ item.name }}</span>
         </template>
       </el-menu-item>
