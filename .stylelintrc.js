@@ -22,6 +22,7 @@ module.exports = {
       'selector-type-no-unknown':null,
       'scss/dollar-variable-pattern':null,
       'no-empty-source': null,
+      'custom-property-pattern':null,
       'selector-pseudo-class-no-unknown': [
           true,
           {
