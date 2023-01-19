@@ -68,19 +68,8 @@
       </BaseCard>
     </div>
     <BaseCard>
-      <template #title>
-        五日内天气，现在时间：{{ nowTime }}
-      </template>
       <template #content>
-        <el-timeline style="margin-top: 50px;">
-          <el-timeline-item
-            v-for="(item1, index) in tianqiData"
-            :key="index"
-            :timestamp="item1.wea"
-          >
-            {{ item.week }}
-          </el-timeline-item>
-        </el-timeline>
+        1
       </template>
     </BaseCard>
   </div>
@@ -90,23 +79,6 @@
 import BaseCard from '@/components/BaseCard'
 import CouponCard from '@/components/CouponCard'
 import SvgIcon from '@/components/SvgIcon.vue'
-import axios from '@/api'
-import { ref } from 'vue'
-import dayjs from 'dayjs'
-const nowTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
-
-const tianqiData = ref({})
-const testApi = () => {
-  const params = {
-    version: 'v9',
-    appid: '23035354',
-    appsecret: '8YvlPNrz'
-  }
-  axios.common.getTianqi(params).then((res) => {
-    tianqiData.value = res.data
-  })
-}
-testApi()
 
 </script>
 
