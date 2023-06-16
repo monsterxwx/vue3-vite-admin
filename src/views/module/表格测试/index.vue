@@ -1,39 +1,36 @@
 <template>
   <div class="base">
-    <BaseTable
-      :data="list"
-      v-bind="tableConfig"
-      @selection-change="selectionChange"
-      @current-change="test1"
-      @page-change="pageChange"
-    >
-      <template #search>
-        <baseSearchForm
-          v-bind="searchConfig"
-          @search="search"
-        />
-      </template>
-      <template #status="scope">
-        <el-switch v-model="scope.row.enable" />
-      </template>
-      <template #handler>
-        <el-button
-          @click="showList"
-          type=""
-        >
-          hh
-        </el-button>
-      </template>
-    </BaseTable>
+    <div class="flex-1 min-h-0">
+      <BaseTable
+        :data="list"
+        v-bind="tableConfig"
+      >
+        <template #status="scope">
+          <el-switch v-model="scope.row.enable" />
+        </template>
+        <template #handler>
+          <el-button
+            @click="showList"
+            type=""
+          >
+            hh
+          </el-button>
+        </template>
+      </BaseTable>
+    </div>
+    <div class="flex justify-end items-center p-[10px_0]">
+      <el-pagination
+        layout="prev, pager, next"
+        :total="50"
+      />
+    </div>
   </div>
 </template>
 
 <script setup>
 // 表格测试
 import BaseTable from '@/components/BaseTable'
-import baseSearchForm from '@/components/SearchForm'
 import tableConfig from './tableConfig'
-import searchConfig from './searchConfig'
 
 const list = Array.from({ length: 20 }).map((item, index) => {
   return {
@@ -50,22 +47,8 @@ const list = Array.from({ length: 20 }).map((item, index) => {
   }
 })
 
-const selectionChange = (res) => {
-  console.log(res)
-}
-
 const showList = () => {
   console.log(list)
-}
-const test1 = (e) => {
-  console.log('总', e)
-}
-
-const pageChange = (e) => {
-  console.log('页数', e)
-}
-const search = (e) => {
-  console.log(e)
 }
 
 </script>

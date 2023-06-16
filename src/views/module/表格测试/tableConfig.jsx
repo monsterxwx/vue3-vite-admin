@@ -1,7 +1,12 @@
 import { ElButton, ElMessage } from 'element-plus'
 const tableConfig = {
-  title: '用户列表',
-  propList: [
+  columns: [
+    {
+      type: 'selection'
+    },
+    {
+      type: 'index'
+    },
     {
       prop: 'name',
       label: '用户名'

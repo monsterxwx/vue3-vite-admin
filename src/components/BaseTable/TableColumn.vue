@@ -1,6 +1,21 @@
 <template>
   <el-table-column
-    v-if="!col.children"
+    v-if="col.type==='selection'"
+    type="selection"
+    align="center"
+    width="60"
+    v-bind="col"
+  />
+  <el-table-column
+    v-else-if="col.type==='index'"
+    type="index"
+    label="序号"
+    align="center"
+    width="80"
+    v-bind="col"
+  />
+  <el-table-column
+    v-else-if="!col.children"
     :label="col.label"
     :prop="col.prop || ''"
     v-bind="col"
@@ -26,16 +41,7 @@
         :name="col.slotName"
         :row="scope.row"
       >
-        <!-- 图片(自带预览),只支持单张图片，多张使用插槽自定义 -->
-        <el-image
-          v-if="col.image"
-          :src="scope.row[col.prop]"
-          :preview-src-list="[scope.row[col.prop]]"
-          fit="cover"
-          class="table-image"
-          preview-teleported
-        />
-        <span v-else>
+        <span>
           {{ scope.row[col.prop] }}
         </span>
       </slot>

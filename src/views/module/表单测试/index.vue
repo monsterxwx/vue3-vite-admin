@@ -46,11 +46,16 @@ const formData = ref({
   tests: ''
 })
 
-const add = () => {
-  formRef.value.formValidate()
+const add = async () => {
+  try {
+    await formRef.value.validate()
+    console.log('校验成功')
+  } catch (error) {
+    console.log('校验失败')
+  }
 }
 const reset = () => {
-  formRef.value.reset()
+  formRef.value.resetFields()
 }
 const confim = () => {
   console.log(formData.value)

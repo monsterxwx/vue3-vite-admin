@@ -158,41 +158,24 @@ const rules = computed(() => {
 const formRef = ref(null)
 // 验证表单
 
-const formValidate = () => {
-  formRef.value.validate(valid => {
-    if (valid) {
-      emit('validate', valid)
-    } else {
-      return false
-    }
-  })
+const validate = () => {
+  return formRef.value.validate()
 }
 // 重置表单
-const reset = () => {
+const resetFields = () => {
   formRef.value.resetFields()
 }
+// 重置验证结果
+const clearValidate = () => {
+  formRef.value.clearValidate()
+}
 defineExpose({
-  formValidate,
-  reset
+  validate,
+  clearValidate,
+  resetFields
 })
 </script>
 
 <style lang="scss" scoped>
-// .base-form {
-//   width: 100%;
-//   .el-slider {
-//     width: 300px;
-//   }
-//   .el-input,
-//   .el-select,
-//   .el-date-editor--timerange {
-//     width: 210px;
-//   }
 
-//   // el-select 为多选时不换行显示
-//   .el-select__tags {
-//     overflow: hidden;
-//     white-space: nowrap;
-//   }
-// }
 </style>
