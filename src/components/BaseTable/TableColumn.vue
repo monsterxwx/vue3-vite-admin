@@ -38,7 +38,7 @@
       />
       <slot
         v-else
-        :name="col.slotName"
+        :name="col.slotName || col.prop"
         :row="scope.row"
       >
         <span>
@@ -52,13 +52,22 @@
     v-else
     :label="col.label"
   >
+    <template
+      #header
+      v-if="col.header"
+    >
+      <component
+        :is="col.header"
+        :row="col"
+      />
+    </template>
     <TableColumn
       v-for="t in col.children"
       :key="t.prop || t.label"
       :col="t"
     >
       <template
-        v-for="slot in Object.keys(customSlots)"
+        v-for="slot in Object.keys($slots)"
         #[slot]="scope"
       >
         <slot
@@ -71,17 +80,13 @@
 </template>
 
 <script setup>
-import { getCurrentInstance, reactive } from 'vue'
 defineProps({
   col: {
     type: Object,
     default: () => {}
   }
 })
-const { proxy } = getCurrentInstance()
-const customSlots = reactive({
-  ...proxy.$slots
-})
+
 </script>
 <script>
 export default {

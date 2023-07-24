@@ -61,6 +61,11 @@ const tableConfig = {
     },
     {
       label: '多级表头',
+      header: (scope) => {
+        return (
+          <ElButton>自定义多级表头</ElButton>
+        )
+      },
       children: [
         {
           prop: 'test1',

@@ -14,7 +14,7 @@
       :col="item"
     >
       <template
-        v-for="slot in Object.keys(customSlots)"
+        v-for="slot in Object.keys($slots)"
         #[slot]="scope"
       >
         <slot
@@ -27,17 +27,13 @@
 </template>
 
 <script setup>
-import { getCurrentInstance, reactive, ref, unref } from 'vue'
+import { ref, unref } from 'vue'
 import TableColumn from './TableColumn'
 defineProps({
   columns: {
     type: Array,
     required: true
   }
-})
-const { proxy } = getCurrentInstance()
-const customSlots = reactive({
-  ...proxy.$slots
 })
 
 const tableRef = ref(null)
