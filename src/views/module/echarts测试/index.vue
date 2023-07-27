@@ -1,9 +1,11 @@
 <template>
-  <v-chart
-    class="chart"
-    autoresize
-    :option="option"
-  />
+  <div class="w-100% h-100%">
+    <v-chart
+      class="chart"
+      autoresize
+      :option="option"
+    />
+  </div>
 </template>
 
 <script setup>
@@ -12,6 +14,7 @@ import { ref, provide } from 'vue'
 provide({
   [THEME_KEY]: 'dark'
 })
+console.log('---22a333sd222323asd22')
 const option = ref({
   title: {
     text: 'Traffic Sources',
