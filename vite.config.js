@@ -3,7 +3,6 @@ import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx' // 引入jsx
 import Unocss from 'unocss/vite'
-import { presetMini, presetAttributify, presetIcons } from 'unocss'
 // 自动导入elementui
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -17,67 +16,7 @@ export default defineConfig({
     vueJsx({
     // 配置选项
     }),
-    Unocss({
-      presets: [presetAttributify(), presetMini(), presetIcons()],
-      rules: [
-        [
-          'base',
-          {
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            'flex-direction': 'column'
-          }
-        ],
-        [
-          'ellipsis',
-          {
-            overflow: 'hidden',
-            'text-overflow': 'ellipsis',
-            'white-space': 'nowrap'
-          }
-        ],
-        [/^ellipsis-(\d+)$/, ([, d]) => ({
-          'word-break': 'break-all',
-          'text-overflow': 'ellipsis',
-          display: '-webkit-box',
-          '-webkit-box-orient': 'vertical',
-          '-webkit-line-clamp': d,
-          overflow: 'hidden'
-        })],
-        [
-          'flex-center',
-          {
-            display: 'flex',
-            'justify-content': 'center',
-            'align-items': 'center'
-          }
-        ],
-        [
-          'flex-between',
-          {
-            display: 'flex',
-            'justify-content': 'space-between',
-            'align-items': 'center'
-          }
-        ],
-        [
-          'flex-around',
-          {
-            display: 'flex',
-            'justify-content': 'space-around',
-            'align-items': 'center'
-          }
-        ],
-        [
-          'flex-align-center',
-          {
-            display: 'flex',
-            'align-items': 'center'
-          }
-        ]
-      ]
-    }),
+    Unocss(),
     AutoImport({
       resolvers: [ElementPlusResolver()]
     }),

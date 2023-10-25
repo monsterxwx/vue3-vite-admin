@@ -1,9 +1,9 @@
 <template>
-  <div class="header flex-between">
-    <div class="flex-align-center">
+  <div class="flex justify-between items-center h-40px bg-#fff">
+    <div class="flex items-center">
       <div
         v-if="!navStore.isSmallScreen"
-        class="ml-15px flex-align-center"
+        class="ml-15px flex items-center"
         @click="navStore.changeCollapse"
       >
         <el-icon
@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div class="flex-align-center">
+    <div class="flex items-center">
       <!-- <el-switch
         @click="toggleDark()"
         inline-prompt
@@ -64,9 +64,9 @@
       <el-icon class="mr-20px">
         <Setting />
       </el-icon>
-      <div class="mr-15px flex-align-center">
+      <div class="mr-15px flex items-center">
         <el-dropdown>
-          <div class="flex-align-center cursor-pointer">
+          <div class="flex items-center cursor-pointer">
             <div class="mr-10px">
               {{ 'admin' }}
             </div>
