@@ -11,7 +11,6 @@ const useNavStore = defineStore({
       isShowMenu: false, // 小屏状态使用，记录是否需要显示菜单
       defaultPath: { name: '默认', path: '/test1' },
       currentRouterPath: { name: '默认', path: '/test1' },
-      mouseSelectPath: '', // 鼠标移动到标签对应的path，用于是否显示关闭按钮
       navList: [{ name: '默认', path: '/test1' }],
       routerList: [
         {
@@ -83,11 +82,6 @@ const useNavStore = defineStore({
       this.currentRouterPath = item
       router.push(item.path)
     },
-    deleteAllItem () {
-      this.navList = []
-      this.currentRouterPath = this.defaultPath
-      router.push('/')
-    },
     addNavItem (item) {
       this.currentRouterPath = item
       if (this.navList.find(chil => chil.path === item.path)) return
@@ -99,9 +93,6 @@ const useNavStore = defineStore({
     },
     changeCollapse () {
       this.collapse = !this.collapse
-    },
-    updateMouseSelect (path) {
-      this.mouseSelectPath = path
     },
     changeScreen (isTrue) {
       this.isSmallScreen = isTrue

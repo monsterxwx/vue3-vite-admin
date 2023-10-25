@@ -44,7 +44,7 @@ const emit = defineEmits(['update:modelValue'])
 const rightMenuRef = ref(null)
 const menuLeft = ref(0)
 const menuTop = ref(0)
-const rightMenuList = ['重新加载', '关闭当前标签页', '关闭其他标签页', '关闭全部标签页']
+const rightMenuList = ['重新加载', '关闭当前标签页', '关闭其他标签页']
 onClickOutside(rightMenuRef, () => {
   emit('update:modelValue', false)
 })
@@ -63,9 +63,6 @@ const itemSelectClick = (item) => {
       break
     case '关闭其他标签页':
       navStore.deleteOtherItem(prop.index)
-      break
-    case '关闭全部标签页':
-      navStore.deleteAllItem()
       break
     default:
       break

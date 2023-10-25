@@ -25,13 +25,11 @@
           v-for="(item, index) in navStore.navList"
           :key="item.name"
           @click="goRouterPath(item)"
-          @mouseenter="navStore.updateMouseSelect(item.path)"
-          @mouseleave="navStore.updateMouseSelect('')"
           @contextmenu.prevent="mouseRightClick($event, index)"
         >
           {{ item.name }}
           <el-icon
-            v-if="navStore.currentRouterPath.path===item.path || navStore.mouseSelectPath===item.path"
+            v-if="navStore.navList.length>1"
             style="margin-left: 5px;"
             @click.stop="deleteItem(index)"
           >
