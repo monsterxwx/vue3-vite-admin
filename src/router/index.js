@@ -31,6 +31,10 @@ const routes = [
         component: () => import('@/views/module/overflow')
       },
       {
+        path: '/virlist',
+        component: () => import('@/views/module/虚拟滚动')
+      },
+      {
         path: '/test4',
         component: () => import('@/views/module/表单测试')
       }

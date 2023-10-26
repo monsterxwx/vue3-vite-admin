@@ -43,14 +43,21 @@ const useNavStore = defineStore({
               path: '/test3',
               name: 'echart',
               id: '1-3'
-            }, {
+            },
+            {
               path: '/test4',
               name: '表单',
               id: '1-4'
-            }, {
+            },
+            {
               path: '/overflow',
               name: 'overflow',
               id: '1-5'
+            },
+            {
+              path: '/virlist',
+              name: '虚拟滚动',
+              id: '1-6'
             }
           ]
         },

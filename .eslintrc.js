@@ -18,6 +18,7 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'no-undef': 'off',
     'vue/require-default-prop': 'off',
-    'no-async-promise-executor': 'off'
+    'no-async-promise-executor': 'off',
+    'vue/v-on-event-hyphenation': 'off'
   }
 }
