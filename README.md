@@ -1,4 +1,19 @@
-## 技术栈
-- vue3+vite2+element-plus+eslint+styleint+pinia+axios
+# 简介
 
-## 目前还在不断完善中，现在在封装最常用的table组件
+vue3-element-plus-admin 是一个基于 Vue3、Vite、ElementPlus、Pinia、VueUse 等的免费中后台模版，它使用了最新的前端技术栈，开箱即用的模板，也可用于学习参考。
+
+# 预览
+
+https://monsterwx.gitee.io/vue3-element-plus-admin
+
+# 技术栈
+- vue3
+- vite
+- element-plus
+- vue-use
+- unocss
+- vue-router
+- scss
+- pinia
+- eslint
+- stylelint
