@@ -29,8 +29,8 @@ defineProps({
 
 <style lang="scss" scoped>
 .el-menu {
-  border: none;
   width: 100%;
+  border: none;
 }
 
 </style>

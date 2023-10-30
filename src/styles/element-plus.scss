@@ -1,4 +1,3 @@
-
 .el-menu {
   --el-menu-hover-bg-color: transparent;
   --el-menu-bg-color: transparent;
@@ -14,15 +13,14 @@
       }
       &:hover::before {
         position: absolute;
-        inset: 2px 12px;
         clear: both;
-        content: '';
-        background: var(--el-fill-color);
         border-radius: 4px;
+        background: var(--el-fill-color);
+        inset: 2px 12px;
+        content: "";
       }
     }
   }
-
   .el-menu-item {
     height: 50px;
     line-height: 50px;
@@ -34,19 +32,19 @@
     }
     &:hover::before {
       position: absolute;
-      inset: 2px 12px;
       clear: both;
-      content: '';
-      background: var(--el-fill-color);
       border-radius: 4px;
+      background: var(--el-fill-color);
+      inset: 2px 12px;
+      content: "";
     }
     &.is-active::before {
       position: absolute;
-      inset: 2px 12px;
       clear: both;
-      content: '';
-      background: var(--el-color-primary-light-8);
       border-radius: 4px;
+      background: var(--el-color-primary-light-8);
+      inset: 2px 12px;
+      content: "";
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center h-40px bg-#fff">
+  <div class="flex justify-between items-center h-40px bg-$el-bg-color">
     <div class="flex items-center">
       <div
         v-if="!navStore.isSmallScreen"
@@ -31,23 +31,37 @@
           <Menu />
         </el-icon>
       </div>
-      <Breadcrumb />
+      <Breadcrumb v-if="!navStore.isSmallScreen" />
     </div>
 
-    <div class="flex items-center">
-      <el-icon class="mr-15px">
+    <div class="flex items-center gap-15px p-[0_15px]">
+      <el-icon class="cursor-pointer">
         <Grid />
       </el-icon>
       <el-icon
-        class="mr-20px  cursor-pointer"
+        class="cursor-pointer"
         @click="fullScreen"
       >
         <FullScreen />
       </el-icon>
-      <el-icon class="mr-20px">
+      <el-icon class="cursor-pointer">
         <Setting />
       </el-icon>
-      <div class="mr-15px flex items-center">
+      <el-icon
+        class="cursor-pointer"
+        @click="themeStore.changeTheme"
+        v-if="themeStore.isDark"
+      >
+        <Moon />
+      </el-icon>
+      <el-icon
+        class="cursor-pointer"
+        @click="themeStore.changeTheme"
+        v-else
+      >
+        <Sunny />
+      </el-icon>
+      <div class="flex items-center">
         <el-dropdown>
           <div class="flex items-center cursor-pointer">
             <div class="mr-10px">
@@ -72,15 +86,14 @@
 <script setup>
 import Breadcrumb from './Breadcrumb.vue'
 import useNavStore from '@/store/nav'
+import useThemeStore from '@/store/theme'
 import useFullScreen from '@/hooks/common/useFullScreen.js'
 const navStore = useNavStore()
+const themeStore = useThemeStore()
 const { fullScreen } = useFullScreen()
 
 </script>
 
 <style lang="scss" scoped>
-.header {
-  height: 40px;
-  background-color: #ffffff;
-}
+
 </style>

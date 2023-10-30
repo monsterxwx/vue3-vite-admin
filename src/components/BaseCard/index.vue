@@ -1,7 +1,6 @@
 <template>
   <div
-    class="card"
-    :style="{backgroundColor:bgColor}"
+    class="card bg-$el-bg-color"
   >
     <div class="title">
       <slot name="title" />
@@ -13,12 +12,6 @@
 </template>
 
 <script setup>
-defineProps({
-  bgColor: {
-    type: String,
-    default: '#ffffff'
-  }
-})
 </script>
 
 <style lang="scss" scoped>
@@ -32,7 +25,7 @@ defineProps({
     display: flex;
     justify-content: space-between;
     padding: 8px 12px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--el-fill-color);
   }
   .content {
     padding: 12px;

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 import router from '@/router'
 
-const useNavStore = defineStore({
+export const useNavStore = defineStore({
   id: 'nav',
   state: () => {
     return {

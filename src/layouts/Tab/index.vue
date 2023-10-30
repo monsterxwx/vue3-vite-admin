@@ -1,5 +1,8 @@
 <template>
-  <div class="header-tab">
+  <div
+    class="header-tab"
+    v-if="!navStore.isSmallScreen"
+  >
     <!-- 左箭头 -->
     <div
       class="arrow"
@@ -115,18 +118,18 @@ const mouseRightClick = (event, index) => {
   align-items: center;
   padding: 0 10px;
   height: 40px;
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #dfe1e4;
-  background-color: #ffffff;
+  border-top: 1px solid var(--el-fill-color);
+  border-bottom: 1px solid var(--el-fill-color);
+  background-color: var(--el-bg-color);
   .arrow {
     position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
     padding: 6px;
-    border: 1px solid #f3f3f3;
+    border: 1px solid var(--el-fill-color);
     border-radius: 4px;
-    background-color: #ffffff;
+    background-color: var(--el-bg-color);
     cursor: pointer;
   }
   .navContent {
@@ -151,9 +154,9 @@ const mouseRightClick = (event, index) => {
         margin-right: 5px;
         padding: 6px 8px;
         font-size: 14px;
-        border: 1px solid #f3f3f3;
+        border: 1px solid var(--el-fill-color);
         border-radius: 4px;
-        color: #666666;
+        color: var(--el-text-color-regular);
         cursor: pointer;
         transition: all 0.3s;
         .el-icon {
@@ -161,8 +164,8 @@ const mouseRightClick = (event, index) => {
           transition: all 0.3s;
           &:hover {
             border-radius: 50%;
-            color: #f56c6c;
-            background-color: #eeeeee;
+            color: var(--el-color-danger);
+            background-color: var(--el-color-primary-light-7);
             transform: scale(1.2);
           }
         }
@@ -173,7 +176,7 @@ const mouseRightClick = (event, index) => {
           left: 0;
           width: 0%;
           height: 2px;
-          background-color: #409eff;
+          background-color: var(--el-color-primary);
           transition: all 0.5s;
         }
         &:hover {
@@ -183,8 +186,8 @@ const mouseRightClick = (event, index) => {
         }
       }
       .activeItem {
-        color: #68b2ff;
-        background-color: #ecf5ff;
+        color: var(--el-color-primary);
+        background-color: var(--el-color-primary-light-9);
         &::after {
           content: "";
           position: absolute;
@@ -192,7 +195,7 @@ const mouseRightClick = (event, index) => {
           left: 0;
           width: 100%;
           height: 2px;
-          background-color: #409eff;
+          background-color: var(--el-color-primary);
         }
       }
     }

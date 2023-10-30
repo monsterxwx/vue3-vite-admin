@@ -45,11 +45,11 @@ const navStore = useNavStore()
 <style lang="scss" scoped>
 .drawer {
   :deep(.el-drawer.ltr) {
-    background-color: #001529;
+    background-color: var(--el-bg-color);
   }
   :deep(.el-drawer__body) {
     padding: 0;
-    background-color: #001529;
+    background-color: var(--el-bg-color);
   }
 }
 

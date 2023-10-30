@@ -1,6 +1,5 @@
 <template>
   <el-breadcrumb
-    v-if="!navStore.isSmallScreen"
     separator="/"
   >
     <el-breadcrumb-item
@@ -17,10 +16,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import useNavStore from '@/store/nav'
 import { useRoute } from 'vue-router'
-
-const navStore = useNavStore()
 
 const route = useRoute()
 
