@@ -3,12 +3,14 @@
     :default-active="$route.path"
     :collapse="collapse"
     :collapse-transition="false"
-    background-color="#001529"
-    text-color="#a5adb4"
     :unique-opened="true"
     router
   >
-    <MenuItem :data="navStore.routerList" />
+    <MenuItem
+      v-for="(item, index) in navStore.routerList"
+      :key="index"
+      :menu="item"
+    />
   </el-menu>
 </template>
 
@@ -27,14 +29,8 @@ defineProps({
 
 <style lang="scss" scoped>
 .el-menu {
-  // 去除右边的线
   border: none;
+  width: 100%;
 }
-.el-menu-item {
-  transition: all 0.3s;
-}
-.el-menu-item.is-active {
-  color: #ffffff;
-  background-color: #4091f7;
-}
+
 </style>

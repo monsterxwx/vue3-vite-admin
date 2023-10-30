@@ -1,33 +1,29 @@
 <template>
-  <div>
-    <template
-      v-for="(item, index) in data"
-      :key="index"
-    >
-      <!--  有子集-->
-      <el-sub-menu
-        :index="item.id"
-        v-if="item.children && item.children.length > 0"
-      >
-        <template #title>
-          <el-icon><Menu /></el-icon>
-          <span>{{ item.name }}</span>
-        </template>
-        <MenuItem :data="item.children" />
-      </el-sub-menu>
-      <!-- 无子集 -->
-      <el-menu-item
-        @click="addItem(item)"
-        :index="item.path"
-        v-else
-      >
-        <el-icon><Wallet /></el-icon>
-        <template #title>
-          <span>{{ item.name }}</span>
-        </template>
-      </el-menu-item>
+  <el-sub-menu
+    :index="menu.id"
+    v-if="menu.children && menu.children.length > 0"
+  >
+    <template #title>
+      <el-icon><Menu /></el-icon>
+      <span>{{ menu.name }}</span>
     </template>
-  </div>
+    <MenuItem
+      v-for="(menuItem,idx) in menu.children"
+      :key="idx"
+      :menu="menuItem"
+    />
+  </el-sub-menu>
+  <!-- 无子集 -->
+  <el-menu-item
+    @click="addItem(menu)"
+    :index="menu.path"
+    v-else
+  >
+    <el-icon><Wallet /></el-icon>
+    <template #title>
+      <span>{{ menu.name }}</span>
+    </template>
+  </el-menu-item>
 </template>
 
 <script setup>
@@ -35,9 +31,9 @@ import useNavStore from '@/store/nav'
 const navStore = useNavStore()
 
 defineProps({
-  data: {
-    type: Array,
-    default: () => ([])
+  menu: {
+    type: Object,
+    default: () => ({})
   }
 })
 

@@ -38,6 +38,9 @@ defineProps({
 
 <style lang="scss" scoped>
 .Container {
+  --un-ring-offset-shadow: 0 0 rgba(0,0,0,0);
+  --un-ring-shadow: 0 0 rgba(0,0,0,0);
+  --un-shadow: 0 0 1px rgba(136,136,136);
   display: flex;
   overflow: hidden;
   width: 100%;
@@ -45,9 +48,11 @@ defineProps({
   background-color: #f0f2f5;
   .aside {
     overflow: hidden;
+    border-right: 1px solid #ececec;
     width: 200px;
+    box-shadow: var(--un-ring-offset-shadow),var(--un-ring-shadow),var(--un-shadow);
     height: 100%;
-    background-color: #001529;
+    background-color: var(--el-bg-color);
     transition: width 0.3s;
   }
   .content {

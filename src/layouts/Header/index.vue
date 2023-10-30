@@ -3,7 +3,7 @@
     <div class="flex items-center">
       <div
         v-if="!navStore.isSmallScreen"
-        class="ml-15px flex items-center"
+        class=" flex items-center p-[0_15px]"
         @click="navStore.changeCollapse"
       >
         <el-icon
@@ -20,7 +20,7 @@
         </el-icon>
       </div>
       <div
-        class="ml-20px cursor-pointer"
+        class="cursor-pointer p-[0_20px]"
         v-else
         @click="navStore.changeMenuShow"
       >
@@ -31,27 +31,10 @@
           <Menu />
         </el-icon>
       </div>
-      <div
-        v-if="!navStore.isSmallScreen"
-        class=" ml-20px"
-      >
-        <el-breadcrumb separator="/">
-          <el-breadcrumb-item :to="{ path: '/' }">
-            首页
-          </el-breadcrumb-item>
-          <el-breadcrumb-item> <a href="/test1">test</a></el-breadcrumb-item>
-          <el-breadcrumb-item>{{ navStore.currentRouterPath.name }}</el-breadcrumb-item>
-        </el-breadcrumb>
-      </div>
+      <Breadcrumb />
     </div>
 
     <div class="flex items-center">
-      <!-- <el-switch
-        @click="toggleDark()"
-        inline-prompt
-        :active-icon="Check"
-        :inactive-icon="Close"
-      /> -->
       <el-icon class="mr-15px">
         <Grid />
       </el-icon>
@@ -87,14 +70,11 @@
 </template>
 
 <script setup>
+import Breadcrumb from './Breadcrumb.vue'
 import useNavStore from '@/store/nav'
 import useFullScreen from '@/hooks/common/useFullScreen.js'
-// import { useDark, useToggle } from '@vueuse/core'
-// import { Check, Close } from '@element-plus/icons-vue'
 const navStore = useNavStore()
 const { fullScreen } = useFullScreen()
-// const isDark = useDark()
-// const toggleDark = useToggle(isDark)
 
 </script>
 
