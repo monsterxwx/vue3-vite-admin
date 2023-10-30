@@ -7,6 +7,7 @@
   >
     <div
       class="right-menu-item"
+      :class="navStore.navList.length<=1?'disabled-menu':''"
       @click="itemSelectClick(item)"
       v-for="item in rightMenuList"
       :key="item"
@@ -54,6 +55,7 @@ watchEffect(() => {
 })
 
 const itemSelectClick = (item) => {
+  if (navStore.navList.length <= 1) return
   switch (item) {
     case '重新加载':
       reLoad()
@@ -91,6 +93,14 @@ const itemSelectClick = (item) => {
       &:hover {
         color: #409eff;
         background-color: #ecf5ff;
+      }
+    }
+    .disabled-menu {
+      cursor: no-drop;
+      color: #c0c4cc;
+      &:hover {
+        color: #c0c4cc;
+        background-color: transparent;
       }
     }
   }
