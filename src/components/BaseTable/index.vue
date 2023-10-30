@@ -1,7 +1,7 @@
 <template>
   <el-table
     ref="tableRef"
-    :header-cell-style="{ background: '#fafafa' }"
+    :header-cell-style="{ background: 'var(--el-fill-color-lighter)' }"
     stripe
     border
     height="100%"
