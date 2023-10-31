@@ -48,3 +48,12 @@
     }
   }
 }
+.el-dialog {
+  --el-border-radius-small: 12px;
+  .el-dialog__title {
+    font-weight: 700;
+  }
+  .el-dialog__body {
+    padding: 24px;
+  }
+}

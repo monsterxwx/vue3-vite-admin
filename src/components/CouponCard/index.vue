@@ -69,14 +69,14 @@
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background-color: #f7f7f7;
+        background-color: var(--el-bg-color-page);
       }
     }
   }
   .centent {
     width: 200px;
     height: 160px;
-    background-color: #f7f7f7;
+    background-color: var(--el-bg-color-page);
     .text {
       padding: 10px;
     }

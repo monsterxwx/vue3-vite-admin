@@ -19,22 +19,12 @@
       style="width: 100%;gap: 1rem;font-size: 14px;"
       class="flex-between"
     >
-      <BaseCard
-        v-waves
-        v-for="item in 3"
-        :key="item"
-      >
+      <BaseCard v-waves>
         <template #title>
           <div>访问数</div>
-          <div
-
-            class="btn"
-          >
-            月
-          </div>
         </template>
         <template #content>
-          <div>ee</div>
+          111
         </template>
       </BaseCard>
       <BaseCard>
@@ -68,10 +58,38 @@
       </BaseCard>
     </div>
     <BaseCard>
+      <template #title>
+        弹窗
+      </template>
       <template #content>
-        1
+        <el-button
+          @click="openDialog"
+          plain
+          size="small"
+        >
+          打开弹窗
+        </el-button>
       </template>
     </BaseCard>
+
+    <el-dialog
+      v-model="dialogVisible"
+      title="Tips"
+      width="30%"
+    >
+      <span>This is a message</span>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="dialogVisible = false">Cancel</el-button>
+          <el-button
+            type="primary"
+            @click="dialogVisible = false"
+          >
+            Confirm
+          </el-button>
+        </span>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
@@ -79,17 +97,16 @@
 import BaseCard from '@/components/BaseCard'
 import CouponCard from '@/components/CouponCard'
 import SvgIcon from '@/components/SvgIcon.vue'
+import { ref } from 'vue'
+
+const dialogVisible = ref(false)
+
+const openDialog = () => {
+  dialogVisible.value = true
+}
 
 </script>
 
 <style lang="scss" scoped>
-.btn {
-  padding: 2px 7px;
-  border: 1px solid #b7eb8f;
-  border-radius: 2px;
-  white-space: nowrap;
-  color: #389e0d;
-  background-color: #f6ffed;
-}
 
 </style>
