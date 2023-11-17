@@ -1,6 +1,6 @@
 import { ElButton } from 'element-plus'
 const formConfig = {
-  propList: [
+  formList: [
     {
       type: 'input',
       prop: 'test1',
@@ -34,16 +34,18 @@ const formConfig = {
     },
     {
       type: 'radio',
-      data: [
-        {
-          value: '1',
-          label: '11'
-        },
-        {
-          value: '2',
-          label: '22'
-        }
-      ],
+      props: {
+        data: [
+          {
+            value: '1',
+            label: '11'
+          },
+          {
+            value: '2',
+            label: '22'
+          }
+        ]
+      },
       prop: 'test3',
       label: '测试3',
       col: {
@@ -52,16 +54,18 @@ const formConfig = {
     },
     {
       type: 'checkbox',
-      data: [
-        {
-          value: '1',
-          label: '11'
-        },
-        {
-          value: '2',
-          label: '22'
-        }
-      ],
+      props: {
+        data: [
+          {
+            value: '1',
+            label: '11'
+          },
+          {
+            value: '2',
+            label: '22'
+          }
+        ]
+      },
       prop: 'test4',
       label: '测试4'
     },
@@ -70,7 +74,7 @@ const formConfig = {
       dateType: 'daterange',
       prop: 'test5',
       label: '测试5',
-      date: {
+      props: {
         'start-placeholder': 'Start date',
         'end-placeholder': 'End date',
         'range-separator': 'To'
@@ -98,7 +102,7 @@ const formConfig = {
       type: 'render',
       render: () => {
         return (
-        <ElButton>render</ElButton>
+          <ElButton>render</ElButton>
         )
       },
       label: 'render'
@@ -107,16 +111,18 @@ const formConfig = {
       type: 'select',
       prop: 'test8',
       label: '测试8',
-      data: [
-        {
-          value: '1',
-          label: '11'
-        },
-        {
-          value: '2',
-          label: '22'
-        }
-      ]
+      props: {
+        data: [
+          {
+            value: '1',
+            label: '11'
+          },
+          {
+            value: '2',
+            label: '22'
+          }
+        ]
+      }
     }
   ]
 
