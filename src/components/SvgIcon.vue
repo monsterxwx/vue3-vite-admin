@@ -1,8 +1,17 @@
 <template>
+  <Icon
+    v-if="icon"
+    :style="{fontSize: size+'px',color:color}"
+    :icon="icon"
+    v-bind="$attrs"
+  />
   <svg
+    v-else
     class="svg-icon"
-    :style="{width:size+'px',height:size+'px'}"
+    :width="size"
+    :height="size"
     aria-hidden="true"
+    v-bind="$attrs"
   >
     <use
       :href="symbolId"
@@ -12,6 +21,7 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue'
 import { computed, toRefs } from 'vue'
 
 const props = defineProps({
@@ -19,9 +29,13 @@ const props = defineProps({
     type: String,
     default: 'icon'
   },
+  icon: {
+    type: String,
+    default: ''
+  },
   name: {
     type: String,
-    required: true
+    default: ''
   },
   size: {
     type: [String, Number],

@@ -32,28 +32,33 @@
           <div>使用svg图标</div>
         </template>
         <template #content>
-          <SvgIcon
-            size="20"
-            name="vip"
-          />
-          <SvgIcon
-            size="20"
-            name="say"
-          />
-          <SvgIcon
-            size="20"
-            name="money"
-          />
-          <SvgIcon
-            size="20"
-            name="safe"
-            color="green"
-          />
-          <SvgIcon
-            size="20"
-            name="test"
-            color="red"
-          />
+          <div class="flex gap-10px items-center">
+            <SvgIcon
+              size="20"
+              name="vip"
+            />
+            <SvgIcon
+              size="20"
+              name="say"
+            />
+            <SvgIcon
+              size="20"
+              name="money"
+            />
+            <SvgIcon
+              size="20"
+              name="safe"
+              color="green"
+            />
+            <SvgIcon
+              size="20"
+              name="test"
+              color="red"
+            />
+            <SvgIcon
+              icon="solar:accumulator-bold"
+            />
+          </div>
         </template>
       </BaseCard>
     </div>
