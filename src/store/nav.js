@@ -33,7 +33,7 @@ export const useNavStore = defineStore({
                   id: '1-2-1'
                 },
                 {
-                  path: '/test22',
+                  path: '/renderTable',
                   name: 'render表格',
                   id: '1-2-2'
                 }

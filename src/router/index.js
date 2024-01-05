@@ -28,7 +28,7 @@ const routes = [
         component: () => import('@/views/module/表格测试')
       },
       {
-        path: '/test22',
+        path: '/renderTable',
         meta: {
           title: 'render表格'
         },
