@@ -17,3 +17,15 @@ https://monsterwx.gitee.io/vue3-element-plus-admin
 - pinia
 - eslint
 - stylelint
+
+# 使用
+
+```bash
+pnpm i
+```
+
+# 启动
+
+```bash
+pnpm dev
+```
