@@ -9,6 +9,7 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // 自动导入svg图标
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { setupBuild } from './build'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd())
@@ -50,6 +51,7 @@ export default defineConfig(({ mode }) => {
           additionalData: '@import "@/styles/variables.scss";'
         }
       }
-    }
+    },
+    build: setupBuild()
   }
 })
