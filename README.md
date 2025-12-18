@@ -4,7 +4,7 @@ vue3-element-plus-admin 是一个基于 Vue3、Vite、ElementPlus、Pinia、VueU
 
 # 预览
 
-https://monsterwx.gitee.io/vue3-element-plus-admin
+https://monsterwx.gitee.io/vue3-element-plus-admin](https://monsterxwx.github.io/vue3-vite-admin
 
 # 技术栈
 - vue3
